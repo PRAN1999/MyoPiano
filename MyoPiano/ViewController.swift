@@ -37,9 +37,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key13: UIView!
     @IBOutlet weak var key14: UIView!
     
-    var keys: [UIView]!, activeKeys: [UIView]!
+    var keys: [UIView]!, activeKeys: [UIView]! = []
+    var map: [Int:String]!
     var pressedKey:UIView!
     var activeStart:Int!, activeEnd:Int!
+    
+    var sounds: [String:AVAudioPlayer]!
     
     
     override func viewDidLoad() {
@@ -62,20 +65,37 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         connectToolbar.isTranslucent = true
         libToolbar.isTranslucent = true
         
-        keys = [key1: "C3",
-                key2: "D3",
-                key3: "E3",
-                key4: "F3",
-                key5: "G3",
-                key6: "A3",
-                key7: "B3",
-                key8: "C4",
-                key9: "D4",
-                key10: "E4",
-                key11: "F4",
-                key12: "G4",
-                key13: "A4",
-                key14: "B4"]
+        keys = [key1,
+                key2,
+                key3,
+                key4,
+                key5,
+                key6,
+                key7,
+                key8,
+                key9,
+                key10,
+                key11,
+                key12,
+                key13,
+                key14]
+        
+        map = [0: "C3",
+                1: "D3",
+                2: "E3",
+                3: "F3",
+                4: "G3",
+                5: "A3",
+                6: "B3",
+                7: "C4",
+                8: "D4",
+                9: "E4",
+                10: "F4",
+                11: "G4",
+                12: "A4",
+                13: "B4"]
+        
+        sounds = [String:AVAudioPlayer]()
         
         activeStart = 5; activeEnd = 9;
         
@@ -83,22 +103,23 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             activeKeys.append(keys[i])
         }
         
+        var i:Int = 0
         for key in keys {
             key.layer.borderColor = UIColor.black.cgColor
             key.layer.borderWidth = 0.7
             
-            let path = Bundle.main.path(forResource: note, ofType: "mp3")
+            let path = Bundle.main.path(forResource: map[i], ofType: "mp3")
             let url = URL(fileURLWithPath: path!)
             
             do {
-                sounds[note] = try AVAudioPlayer(contentsOf: url)
+                sounds[map[i]!] = try AVAudioPlayer(contentsOf: url)
+                sounds[map[i]!]?.prepareToPlay()
             } catch let error as NSError {
                 print(error.description)
             }
+            
+            i += 1
         }
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -117,7 +138,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             self.libToolbar.isHidden = !self.libToolbar.isHidden
         })
         
-        let player: AVAudioPlayer = sounds["C4"]!
+        let player: AVAudioPlayer = sounds["B3"]!
         player.play()
     }
     // MARK: NSNotificationCenter Methods
@@ -164,5 +185,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             print(arr2)
             ct2 = 0
         }
+    }
+    
+    func changeActiveKeys(activeStart: Int, activeEnd:Int) {
+        
     }
 }

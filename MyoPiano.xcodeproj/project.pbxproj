@@ -147,6 +147,10 @@
 		5112BE0420793EF60014566B /* MyoPiano */ = {
 			isa = PBXGroup;
 			children = (
+				5112BE0520793EF60014566B /* AppDelegate.swift */,
+				5112BE0720793EF60014566B /* ViewController.swift */,
+				5112BE0920793EF60014566B /* Main.storyboard */,
+				5112BE0F20793EF80014566B /* Assets.xcassets */,
 				3305D897207956CA00F1AD09 /* G3.mp3 */,
 				3305D898207956CA00F1AD09 /* G4.mp3 */,
 				3305D87F2079545200F1AD09 /* A3.mp3 */,
@@ -161,10 +165,6 @@
 				3305D8842079545300F1AD09 /* E4.mp3 */,
 				3305D8882079545400F1AD09 /* F3.mp3 */,
 				3305D8852079545400F1AD09 /* F4.mp3 */,
-				5112BE0520793EF60014566B /* AppDelegate.swift */,
-				5112BE0720793EF60014566B /* ViewController.swift */,
-				5112BE0920793EF60014566B /* Main.storyboard */,
-				5112BE0F20793EF80014566B /* Assets.xcassets */,
 				5112BE1120793EF80014566B /* LaunchScreen.storyboard */,
 				5112BE1420793EF80014566B /* Info.plist */,
 				5112BE0C20793EF60014566B /* MyoPiano.xcdatamodeld */,
