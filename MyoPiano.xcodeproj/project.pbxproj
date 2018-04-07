@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5112BE0620793EF60014566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0520793EF60014566B /* AppDelegate.swift */; };
+		5112BE0820793EF60014566B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0720793EF60014566B /* ViewController.swift */; };
+		5112BE0B20793EF60014566B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE0920793EF60014566B /* Main.storyboard */; };
+		5112BE0E20793EF60014566B /* MyoPiano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0C20793EF60014566B /* MyoPiano.xcdatamodeld */; };
+		5112BE1020793EF80014566B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE0F20793EF80014566B /* Assets.xcassets */; };
+		5112BE1320793EF80014566B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE1120793EF80014566B /* LaunchScreen.storyboard */; };
+		5112BE1E20793EF80014566B /* MyoPianoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE1D20793EF80014566B /* MyoPianoTests.swift */; };
+		5112BE2920793EF80014566B /* MyoPianoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE2820793EF80014566B /* MyoPianoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5112BE1A20793EF80014566B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5112BDFA20793EF60014566B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5112BE0120793EF60014566B;
+			remoteInfo = MyoPiano;
+		};
+		5112BE2520793EF80014566B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5112BDFA20793EF60014566B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5112BE0120793EF60014566B;
+			remoteInfo = MyoPiano;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5112BE0220793EF60014566B /* MyoPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyoPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5112BE0520793EF60014566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5112BE0720793EF60014566B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5112BE0A20793EF60014566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5112BE0D20793EF60014566B /* MyoPiano.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyoPiano.xcdatamodel; sourceTree = "<group>"; };
+		5112BE0F20793EF80014566B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5112BE1220793EF80014566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5112BE1420793EF80014566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5112BE1920793EF80014566B /* MyoPianoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoPianoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5112BE1D20793EF80014566B /* MyoPianoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoPianoTests.swift; sourceTree = "<group>"; };
+		5112BE1F20793EF80014566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5112BE2420793EF80014566B /* MyoPianoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoPianoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5112BE2820793EF80014566B /* MyoPianoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoPianoUITests.swift; sourceTree = "<group>"; };
+		5112BE2A20793EF80014566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5112BDFF20793EF60014566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE1620793EF80014566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE2120793EF80014566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5112BDF920793EF60014566B = {
+			isa = PBXGroup;
+			children = (
+				5112BE0420793EF60014566B /* MyoPiano */,
+				5112BE1C20793EF80014566B /* MyoPianoTests */,
+				5112BE2720793EF80014566B /* MyoPianoUITests */,
+				5112BE0320793EF60014566B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5112BE0320793EF60014566B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE0220793EF60014566B /* MyoPiano.app */,
+				5112BE1920793EF80014566B /* MyoPianoTests.xctest */,
+				5112BE2420793EF80014566B /* MyoPianoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5112BE0420793EF60014566B /* MyoPiano */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE0520793EF60014566B /* AppDelegate.swift */,
+				5112BE0720793EF60014566B /* ViewController.swift */,
+				5112BE0920793EF60014566B /* Main.storyboard */,
+				5112BE0F20793EF80014566B /* Assets.xcassets */,
+				5112BE1120793EF80014566B /* LaunchScreen.storyboard */,
+				5112BE1420793EF80014566B /* Info.plist */,
+				5112BE0C20793EF60014566B /* MyoPiano.xcdatamodeld */,
+			);
+			path = MyoPiano;
+			sourceTree = "<group>";
+		};
+		5112BE1C20793EF80014566B /* MyoPianoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE1D20793EF80014566B /* MyoPianoTests.swift */,
+				5112BE1F20793EF80014566B /* Info.plist */,
+			);
+			path = MyoPianoTests;
+			sourceTree = "<group>";
+		};
+		5112BE2720793EF80014566B /* MyoPianoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE2820793EF80014566B /* MyoPianoUITests.swift */,
+				5112BE2A20793EF80014566B /* Info.plist */,
+			);
+			path = MyoPianoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5112BE0120793EF60014566B /* MyoPiano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5112BE2D20793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPiano" */;
+			buildPhases = (
+				5112BDFE20793EF60014566B /* Sources */,
+				5112BDFF20793EF60014566B /* Frameworks */,
+				5112BE0020793EF60014566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyoPiano;
+			productName = MyoPiano;
+			productReference = 5112BE0220793EF60014566B /* MyoPiano.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5112BE1820793EF80014566B /* MyoPianoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5112BE3020793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoTests" */;
+			buildPhases = (
+				5112BE1520793EF80014566B /* Sources */,
+				5112BE1620793EF80014566B /* Frameworks */,
+				5112BE1720793EF80014566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5112BE1B20793EF80014566B /* PBXTargetDependency */,
+			);
+			name = MyoPianoTests;
+			productName = MyoPianoTests;
+			productReference = 5112BE1920793EF80014566B /* MyoPianoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5112BE2320793EF80014566B /* MyoPianoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5112BE3320793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoUITests" */;
+			buildPhases = (
+				5112BE2020793EF80014566B /* Sources */,
+				5112BE2120793EF80014566B /* Frameworks */,
+				5112BE2220793EF80014566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5112BE2620793EF80014566B /* PBXTargetDependency */,
+			);
+			name = MyoPianoUITests;
+			productName = MyoPianoUITests;
+			productReference = 5112BE2420793EF80014566B /* MyoPianoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5112BDFA20793EF60014566B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Pranay Neelagiri";
+				TargetAttributes = {
+					5112BE0120793EF60014566B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					5112BE1820793EF80014566B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 5112BE0120793EF60014566B;
+					};
+					5112BE2320793EF80014566B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 5112BE0120793EF60014566B;
+					};
+				};
+			};
+			buildConfigurationList = 5112BDFD20793EF60014566B /* Build configuration list for PBXProject "MyoPiano" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5112BDF920793EF60014566B;
+			productRefGroup = 5112BE0320793EF60014566B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5112BE0120793EF60014566B /* MyoPiano */,
+				5112BE1820793EF80014566B /* MyoPianoTests */,
+				5112BE2320793EF80014566B /* MyoPianoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5112BE0020793EF60014566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5112BE1320793EF80014566B /* LaunchScreen.storyboard in Resources */,
+				5112BE1020793EF80014566B /* Assets.xcassets in Resources */,
+				5112BE0B20793EF60014566B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE1720793EF80014566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE2220793EF80014566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5112BDFE20793EF60014566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5112BE0E20793EF60014566B /* MyoPiano.xcdatamodeld in Sources */,
+				5112BE0820793EF60014566B /* ViewController.swift in Sources */,
+				5112BE0620793EF60014566B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE1520793EF80014566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5112BE1E20793EF80014566B /* MyoPianoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5112BE2020793EF80014566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5112BE2920793EF80014566B /* MyoPianoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5112BE1B20793EF80014566B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5112BE0120793EF60014566B /* MyoPiano */;
+			targetProxy = 5112BE1A20793EF80014566B /* PBXContainerItemProxy */;
+		};
+		5112BE2620793EF80014566B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5112BE0120793EF60014566B /* MyoPiano */;
+			targetProxy = 5112BE2520793EF80014566B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5112BE0920793EF60014566B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5112BE0A20793EF60014566B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5112BE1120793EF80014566B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5112BE1220793EF80014566B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5112BE2B20793EF80014566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5112BE2C20793EF80014566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5112BE2E20793EF80014566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPiano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5112BE2F20793EF80014566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPiano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5112BE3120793EF80014566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPianoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyoPiano.app/MyoPiano";
+			};
+			name = Debug;
+		};
+		5112BE3220793EF80014566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPianoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyoPiano.app/MyoPiano";
+			};
+			name = Release;
+		};
+		5112BE3420793EF80014566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyoPiano;
+			};
+			name = Debug;
+		};
+		5112BE3520793EF80014566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyoPiano;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5112BDFD20793EF60014566B /* Build configuration list for PBXProject "MyoPiano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5112BE2B20793EF80014566B /* Debug */,
+				5112BE2C20793EF80014566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5112BE2D20793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPiano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5112BE2E20793EF80014566B /* Debug */,
+				5112BE2F20793EF80014566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5112BE3020793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5112BE3120793EF80014566B /* Debug */,
+				5112BE3220793EF80014566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5112BE3320793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5112BE3420793EF80014566B /* Debug */,
+				5112BE3520793EF80014566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5112BE0C20793EF60014566B /* MyoPiano.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5112BE0D20793EF60014566B /* MyoPiano.xcdatamodel */,
+			);
+			currentVersion = 5112BE0D20793EF60014566B /* MyoPiano.xcdatamodel */;
+			path = MyoPiano.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5112BDFA20793EF60014566B /* Project object */;
+}
