@@ -44,7 +44,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     var sounds: [String:AVAudioPlayer]!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let notifer = NotificationCenter.default
@@ -96,8 +95,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
                 13: "B4"]
         
         sounds = [String:AVAudioPlayer]()
-        
-        activeStart = 5; activeEnd = 9;
         
         for i in activeStart...activeEnd {
             activeKeys.append(keys[i])
@@ -188,6 +185,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     func changeActiveKeys(activeStart: Int, activeEnd:Int) {
-        
+        for i in activeStart...activeEnd {
+            activeKeys[i] = keys[i]
+        }
     }
 }
