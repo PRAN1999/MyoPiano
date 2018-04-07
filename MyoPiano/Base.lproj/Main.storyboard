@@ -154,6 +154,7 @@
                             <constraint firstItem="YUn-IP-eKq" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="Uri-rH-L0E"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="l2a-ee-z24" secondAttribute="bottom" id="XLY-Ix-Bcp"/>
                             <constraint firstItem="l2a-ee-z24" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="ZbR-3O-n0s"/>
+                            <constraint firstItem="YUn-IP-eKq" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="bDe-ht-Tqy"/>
                             <constraint firstItem="l2a-ee-z24" firstAttribute="top" secondItem="kaI-K1-ECn" secondAttribute="top" id="lWf-qv-hhx"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="YUn-IP-eKq" secondAttribute="bottom" id="x0Y-of-xEL"/>
                         </constraints>
@@ -162,8 +163,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="connectToolbar" destination="itg-v1-2Jf" id="XET-J0-Fde"/>
-                        <outlet property="connectionItem" destination="Z4T-ro-QZt" id="Ypz-WE-u4C"/>
+                        <outlet property="connectToolbar" destination="itg-v1-2Jf" id="Sf8-oF-Tb4"/>
+                        <outlet property="connectionItem" destination="Z4T-ro-QZt" id="U3J-ey-Ma5"/>
                         <outlet property="key1" destination="2dO-p0-RvB" id="QYf-eD-xpZ"/>
                         <outlet property="key10" destination="JVi-mP-ISc" id="vHM-BD-srj"/>
                         <outlet property="key11" destination="DnA-1X-Khg" id="cVt-xH-0Ms"/>
@@ -178,9 +179,9 @@
                         <outlet property="key7" destination="6Qs-sa-FV4" id="1RJ-AZ-uhT"/>
                         <outlet property="key8" destination="sry-4j-DLY" id="C8f-87-I2w"/>
                         <outlet property="key9" destination="kbG-HD-2Yt" id="P8g-DD-Xa0"/>
-                        <outlet property="libToolbar" destination="YUn-IP-eKq" id="qNk-Lq-uVe"/>
-                        <outlet property="pianoView" destination="l2a-ee-z24" id="5rn-DC-gxW"/>
-                        <outlet property="toolbar" destination="itg-v1-2Jf" id="aro-fB-C26"/>
+                        <outlet property="libToolbar" destination="YUn-IP-eKq" id="d7K-jh-IW2"/>
+                        <outlet property="libraryButton" destination="wnr-Pg-hKR" id="9sa-yt-Maw"/>
+                        <outlet property="pianoView" destination="l2a-ee-z24" id="N5L-2g-sJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFa-hf-eWk" userLabel="First Responder" sceneMemberID="firstResponder"/>

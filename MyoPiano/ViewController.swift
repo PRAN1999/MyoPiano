@@ -15,6 +15,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var connectToolbar: UIToolbar!
     @IBOutlet weak var pianoView: UIView!
     @IBOutlet weak var connectionItem: UIBarButtonItem!
+    @IBOutlet weak var libraryButton: UIBarButtonItem!
     
     var arr1 = Array(repeating: Array(repeating: 0, count: 8), count: 100), arr2 = Array(repeating: Array(repeating: 0, count: 8), count: 100)
     var ct1 = 0, ct2 = 0
