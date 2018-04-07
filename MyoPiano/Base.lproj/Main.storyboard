@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="orW-Oj-wUQ">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="RvS-YL-UW0">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="orW-Oj-wUQ" customClass="ViewController" customModule="MyoPiano" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o5Z-0d-MDG">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-ee-z24">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itg-v1-2Jf">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                                        <items>
+                                            <barButtonItem image="settings" style="plain" id="h8Y-oS-glC">
+                                                <connections>
+                                                    <action selector="didTapSettings:" destination="orW-Oj-wUQ" id="xcc-Gn-kHS"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="6CR-AZ-Sg8"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Tyn-ka-v3o"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="gon-Rq-d0q"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Eef-pv-cQg"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="N1j-sx-pEd"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="c6p-9U-dvS"/>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Oy9-J5-FZK"/>
+                                            <barButtonItem title="Disconnected" width="42" style="plain" id="Z4T-ro-QZt"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="itg-v1-2Jf" secondAttribute="trailing" id="I7K-3S-HOZ"/>
+                                    <constraint firstItem="itg-v1-2Jf" firstAttribute="top" secondItem="l2a-ee-z24" secondAttribute="top" id="Ogc-rz-ptN"/>
+                                    <constraint firstItem="itg-v1-2Jf" firstAttribute="leading" secondItem="l2a-ee-z24" secondAttribute="leading" id="u63-fp-daQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="l2a-ee-z24" secondAttribute="trailing" id="0KZ-uh-D0A"/>
+                            <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="l2a-ee-z24" secondAttribute="bottom" id="XLY-Ix-Bcp"/>
+                            <constraint firstItem="l2a-ee-z24" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="ZbR-3O-n0s"/>
+                            <constraint firstItem="l2a-ee-z24" firstAttribute="top" secondItem="kaI-K1-ECn" secondAttribute="top" id="lWf-qv-hhx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kaI-K1-ECn"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="connectionItem" destination="Z4T-ro-QZt" id="Ypz-WE-u4C"/>
+                        <outlet property="pianoView" destination="l2a-ee-z24" id="5rn-DC-gxW"/>
+                        <outlet property="toolbar" destination="itg-v1-2Jf" id="aro-fB-C26"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFa-hf-eWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="353.07346326836586" y="442.39999999999998"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+    </resources>
 </document>

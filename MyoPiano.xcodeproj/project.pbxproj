@@ -15,6 +15,12 @@
 		5112BE1320793EF80014566B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE1120793EF80014566B /* LaunchScreen.storyboard */; };
 		5112BE1E20793EF80014566B /* MyoPianoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE1D20793EF80014566B /* MyoPianoTests.swift */; };
 		5112BE2920793EF80014566B /* MyoPianoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE2820793EF80014566B /* MyoPianoUITests.swift */; };
+		5112BE3B20793F730014566B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE3A20793F730014566B /* CoreBluetooth.framework */; };
+		5112BE3D20793F820014566B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE3C20793F820014566B /* SystemConfiguration.framework */; };
+		5112BE3F20793F8B0014566B /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE3E20793F8B0014566B /* MyoKit.framework */; };
+		5112BE4120793F960014566B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE4020793F960014566B /* UIKit.framework */; };
+		5112BE4320793F9D0014566B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE4220793F9D0014566B /* Foundation.framework */; };
+		5112BE4520793FFF0014566B /* GLKitPolyfill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE4420793FFF0014566B /* GLKitPolyfill.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,14 @@
 		5112BE2420793EF80014566B /* MyoPianoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoPianoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5112BE2820793EF80014566B /* MyoPianoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyoPianoUITests.swift; sourceTree = "<group>"; };
 		5112BE2A20793EF80014566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5112BE3620793F600014566B /* MyoPiano-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyoPiano-Bridging-Header.h"; sourceTree = "<group>"; };
+		5112BE3A20793F730014566B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		5112BE3C20793F820014566B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5112BE3E20793F8B0014566B /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		5112BE4020793F960014566B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5112BE4220793F9D0014566B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5112BE4420793FFF0014566B /* GLKitPolyfill.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLKitPolyfill.m; sourceTree = "<group>"; };
+		5112BE46207940120014566B /* GLKitPolyfill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKitPolyfill.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5112BE4320793F9D0014566B /* Foundation.framework in Frameworks */,
+				5112BE4120793F960014566B /* UIKit.framework in Frameworks */,
+				5112BE3F20793F8B0014566B /* MyoKit.framework in Frameworks */,
+				5112BE3D20793F820014566B /* SystemConfiguration.framework in Frameworks */,
+				5112BE3B20793F730014566B /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +102,7 @@
 				5112BE1C20793EF80014566B /* MyoPianoTests */,
 				5112BE2720793EF80014566B /* MyoPianoUITests */,
 				5112BE0320793EF60014566B /* Products */,
+				5112BE3920793F720014566B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +126,9 @@
 				5112BE1120793EF80014566B /* LaunchScreen.storyboard */,
 				5112BE1420793EF80014566B /* Info.plist */,
 				5112BE0C20793EF60014566B /* MyoPiano.xcdatamodeld */,
+				5112BE3620793F600014566B /* MyoPiano-Bridging-Header.h */,
+				5112BE4420793FFF0014566B /* GLKitPolyfill.m */,
+				5112BE46207940120014566B /* GLKitPolyfill.h */,
 			);
 			path = MyoPiano;
 			sourceTree = "<group>";
@@ -126,6 +149,18 @@
 				5112BE2A20793EF80014566B /* Info.plist */,
 			);
 			path = MyoPianoUITests;
+			sourceTree = "<group>";
+		};
+		5112BE3920793F720014566B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE4220793F9D0014566B /* Foundation.framework */,
+				5112BE4020793F960014566B /* UIKit.framework */,
+				5112BE3E20793F8B0014566B /* MyoKit.framework */,
+				5112BE3C20793F820014566B /* SystemConfiguration.framework */,
+				5112BE3A20793F730014566B /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +231,7 @@
 				TargetAttributes = {
 					5112BE0120793EF60014566B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					5112BE1820793EF80014566B = {
 						CreatedOnToolsVersion = 9.3;
@@ -259,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5112BE4520793FFF0014566B /* GLKitPolyfill.m in Sources */,
 				5112BE0E20793EF60014566B /* MyoPiano.xcdatamodeld in Sources */,
 				5112BE0820793EF60014566B /* ViewController.swift in Sources */,
 				5112BE0620793EF60014566B /* AppDelegate.swift in Sources */,
@@ -434,8 +471,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,6 +486,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,8 +497,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
