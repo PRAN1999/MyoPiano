@@ -123,6 +123,12 @@
                                             <barButtonItem title="Disconnected" width="42" style="plain" id="Z4T-ro-QZt"/>
                                         </items>
                                     </toolbar>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-IP-eKq">
+                                        <rect key="frame" x="0.0" y="343" width="667" height="32"/>
+                                        <items>
+                                            <barButtonItem title="Library" id="wnr-Pg-hKR"/>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -132,6 +138,7 @@
                                     <constraint firstItem="itg-v1-2Jf" firstAttribute="top" secondItem="l2a-ee-z24" secondAttribute="top" id="Ogc-rz-ptN"/>
                                     <constraint firstAttribute="bottom" secondItem="LON-9l-9M3" secondAttribute="bottom" id="XAE-3c-ylm"/>
                                     <constraint firstItem="bfd-Og-RsV" firstAttribute="top" secondItem="LON-9l-9M3" secondAttribute="top" id="XQM-Wp-3FE"/>
+                                    <constraint firstAttribute="bottom" secondItem="YUn-IP-eKq" secondAttribute="bottom" id="iI9-6v-Ots"/>
                                     <constraint firstItem="bfd-Og-RsV" firstAttribute="width" secondItem="l2a-ee-z24" secondAttribute="height" multiplier="212:125" constant="31" id="qTr-FC-ZPf"/>
                                     <constraint firstItem="itg-v1-2Jf" firstAttribute="leading" secondItem="l2a-ee-z24" secondAttribute="leading" id="u63-fp-daQ"/>
                                 </constraints>
@@ -141,17 +148,21 @@
                         <constraints>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="l2a-ee-z24" secondAttribute="trailing" id="0KZ-uh-D0A"/>
                             <constraint firstItem="LON-9l-9M3" firstAttribute="width" secondItem="o5Z-0d-MDG" secondAttribute="width" id="5SB-md-PLt"/>
+                            <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="YUn-IP-eKq" secondAttribute="trailing" id="9d2-P7-fwV"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="bfd-Og-RsV" secondAttribute="trailing" constant="3" id="CKs-un-REK"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="leading" secondItem="bfd-Og-RsV" secondAttribute="leading" constant="3" id="JAL-o7-iob"/>
+                            <constraint firstItem="YUn-IP-eKq" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="Uri-rH-L0E"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="l2a-ee-z24" secondAttribute="bottom" id="XLY-Ix-Bcp"/>
                             <constraint firstItem="l2a-ee-z24" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="ZbR-3O-n0s"/>
                             <constraint firstItem="l2a-ee-z24" firstAttribute="top" secondItem="kaI-K1-ECn" secondAttribute="top" id="lWf-qv-hhx"/>
+                            <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="YUn-IP-eKq" secondAttribute="bottom" id="x0Y-of-xEL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kaI-K1-ECn"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="connectToolbar" destination="itg-v1-2Jf" id="XET-J0-Fde"/>
                         <outlet property="connectionItem" destination="Z4T-ro-QZt" id="Ypz-WE-u4C"/>
                         <outlet property="key1" destination="2dO-p0-RvB" id="QYf-eD-xpZ"/>
                         <outlet property="key10" destination="JVi-mP-ISc" id="vHM-BD-srj"/>
@@ -167,6 +178,7 @@
                         <outlet property="key7" destination="6Qs-sa-FV4" id="1RJ-AZ-uhT"/>
                         <outlet property="key8" destination="sry-4j-DLY" id="C8f-87-I2w"/>
                         <outlet property="key9" destination="kbG-HD-2Yt" id="P8g-DD-Xa0"/>
+                        <outlet property="libToolbar" destination="YUn-IP-eKq" id="qNk-Lq-uVe"/>
                         <outlet property="pianoView" destination="l2a-ee-z24" id="5rn-DC-gxW"/>
                         <outlet property="toolbar" destination="itg-v1-2Jf" id="aro-fB-C26"/>
                     </connections>
