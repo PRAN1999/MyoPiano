@@ -108,7 +108,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             key.layer.borderColor = UIColor.black.cgColor
             key.layer.borderWidth = 0.7
             
-            let path = Bundle.main.path(forResource: map[i], ofType: "mp3")
+            let path = Bundle.main.path(forResource: "audio\(map[i]!)", ofType: "mp3")
             let url = URL(fileURLWithPath: path!)
             
             do {
