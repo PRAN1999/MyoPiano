@@ -11,16 +11,12 @@ import AVFoundation
 
 class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var currentPose: TLMPose!
+    //All outlets to keys and UI features
     @IBOutlet weak var libToolbar: UIToolbar!
     @IBOutlet weak var connectToolbar: UIToolbar!
     @IBOutlet weak var pianoView: UIView!
     @IBOutlet weak var connectionItem: UIBarButtonItem!
     @IBOutlet weak var libraryButton: UIBarButtonItem!
-    
-    var arr1 = Array(repeating: Array(repeating: 0, count: 8), count: 100), arr2 = Array(repeating: Array(repeating: 0, count: 8), count: 100)
-    var ct1 = 0, ct2 = 0
-    var arr1Fill:Bool = true
-    var arr2Fill: Bool = false
     
     @IBOutlet weak var key1: UIView!
     @IBOutlet weak var key2: UIView!
@@ -37,26 +33,45 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key13: UIView!
     @IBOutlet weak var key14: UIView!
     
-    var keys: [UIView]!, activeKeys: [UIView]! = []
+    //2D arrays for holding EMG data, and their corresponding "fill" flags
+    var arr1 = Array(repeating: Array(repeating: 0, count: 8), count: 100), arr2 = Array(repeating: Array(repeating: 0, count: 8), count: 100)
+    var ct1 = 0, ct2 = 0
+    var arr2Fill: Bool = false
+    
+    //Arrays and sets to keep track of the key(s) being pressed,
+    //and the audio that goes with them
+    var keys: [UIView]!
+    // activeKeys: [UIView]! = []
     var map: [Int:String]!
     var pressedKey:UIView!
-    var activeStart:Int!, activeEnd:Int!
-    
     var sounds: [String:AVAudioPlayer]!
+    
+    //Used to keep track of horizontal motion through acceleration data
+    var activeStart:Int!, activeEnd:Int!
+    let g: Double = 9.80665 //gravitational constant of acceleration
+    var acceleration: Double = 0.0
+    var lastPosition: Double = 0.0
+    var lastVelocity: Double = 0.0
+    var lastTimestamp: Date = Date.init(timeIntervalSinceNow: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notifer = NotificationCenter.default
+        let notifier = NotificationCenter.default
         
         // Data notifications are received through NSNotificationCenter.
         // Posted whenever a TLMMyo connects
-        notifer.addObserver(self, selector: #selector(ViewController.didConnectDevice(_:)), name: NSNotification.Name.TLMHubDidConnectDevice, object: nil)
+        notifier.addObserver(self, selector: #selector(ViewController.didConnectDevice(_:)), name: NSNotification.Name.TLMHubDidConnectDevice, object: nil)
         
         // Posted whenever a TLMMyo disconnects.
-        notifer.addObserver(self, selector: #selector(ViewController.didDisconnectDevice(_:)), name: NSNotification.Name.TLMHubDidDisconnectDevice, object: nil)
+        notifier.addObserver(self, selector: #selector(ViewController.didDisconnectDevice(_:)), name: NSNotification.Name.TLMHubDidDisconnectDevice, object: nil)
         
-        notifer.addObserver(self, selector: #selector(ViewController.didReceiveEMGChange(_:)), name: NSNotification.Name.TLMMyoDidReceiveEmgEvent, object: nil)
+        //Create an observer for recieving EMG data
+        notifier.addObserver(self, selector: #selector(ViewController.didReceiveEMGChange(_:)), name: NSNotification.Name.TLMMyoDidReceiveEmgEvent, object: nil)
         
+        notifier.addObserver(self, selector: #selector(ViewController.didRecieveAccelData(_:)),
+            name: NSNotification.Name.TLMMyoDidReceiveAccelerometerEvent, object: nil)
+        
+        //Create an gesture recognizer to hide and show the top and bottom toolbars
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
         tap.delegate = self
         pianoView.addGestureRecognizer(tap)
@@ -64,43 +79,15 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         connectToolbar.isTranslucent = true
         libToolbar.isTranslucent = true
         
-        keys = [key1,
-                key2,
-                key3,
-                key4,
-                key5,
-                key6,
-                key7,
-                key8,
-                key9,
-                key10,
-                key11,
-                key12,
-                key13,
-                key14]
         
-        map = [0: "C3",
-                1: "D3",
-                2: "E3",
-                3: "F3",
-                4: "G3",
-                5: "A3",
-                6: "B3",
-                7: "C4",
-                8: "D4",
-                9: "E4",
-                10: "F4",
-                11: "G4",
-                12: "A4",
-                13: "B4"]
+        keys = [key1, key2, key3, key4, key5, key6, key7,
+                key8, key9, key10, key11, key12, key13, key14]
+        
+        map = [0: "C3", 1: "D3", 2: "E3", 3: "F3", 4: "G3",
+               5: "A3", 6: "B3", 7: "C4", 8: "D4", 9: "E4",
+               10: "F4", 11: "G4", 12: "A4", 13: "B4"]
         
         sounds = [String:AVAudioPlayer]()
-        
-        activeStart = 5; activeEnd = 9;
-        
-        for i in activeStart...activeEnd {
-            activeKeys.append(keys[i])
-        }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -126,6 +113,16 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             
             i += 1
         }
+        
+        
+        //Indicates which keys the user can press, activeStart pointing to the
+        //thumb and activeEnd pointing to pinkie
+        activeStart = 5; activeEnd = 9;
+        
+        //Unnecesary since we only need to keep track of where the thumb is
+//        for i in activeStart...activeEnd {
+//            activeKeys.append(keys[i])
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -144,11 +141,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             self.libToolbar.isHidden = !self.libToolbar.isHidden
         })
         
+        //Test play sound
         let player: AVAudioPlayer = sounds["B3"]!
         player.play()
     }
-    // MARK: NSNotificationCenter Methods
     
+    // MARK: NSNotificationCenter Methods
     @objc func didConnectDevice(_ notification: Notification) {
         // Access the connected device.
         let userinfo = notification.userInfo
@@ -193,21 +191,30 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func changeActiveKeys(activeStart: Int, activeEnd:Int) {
-        for i in activeStart...activeEnd {
-            activeKeys[i] = keys[i]
-        }
+    @objc func didRecieveAccelData(_ notification: Notification) {
+        //Handle acceleration data
+        let userInfo = notification.userInfo
+        let data = userInfo![kTLMKeyAccelerometerEvent] as! TLMAccelerometerEvent
+        
+        let currTimestamp: Date = data.timestamp
+        let elapsedTime = currTimestamp.timeIntervalSince(lastTimestamp)
+        acceleration = Double(data.vector.y) * g
+        
+        lastVelocity = getVelocity(accel: acceleration, timeElapsed: elapsedTime)
+        lastTimestamp = currTimestamp
+        
+        changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
+    }
+    
+    func changeActiveKeys(activeStart: Int) {
+        self.activeStart = activeStart
     }
     
     func changePosition(velocity:Double, accel:Double, timeElapsed:Double) {
-        
+        lastPosition += (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
     }
     
-    func getVelocity(accel:Double, timeElapsed:Double) {
-        
-    }
-    
-    func getTimeElapsed(time:Double) {
-        
+    func getVelocity(accel:Double, timeElapsed:Double) -> Double {
+        return lastVelocity + (accel * timeElapsed)
     }
 }
