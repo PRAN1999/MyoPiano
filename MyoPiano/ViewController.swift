@@ -96,8 +96,17 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         sounds = [String:AVAudioPlayer]()
         
+        activeStart = 5; activeEnd = 9;
+        
         for i in activeStart...activeEnd {
             activeKeys.append(keys[i])
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error as NSError {
+            print(error.description)
         }
         
         var i:Int = 0
@@ -105,11 +114,11 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             key.layer.borderColor = UIColor.black.cgColor
             key.layer.borderWidth = 0.7
             
-            let path = Bundle.main.path(forResource: "audio\(map[i]!)", ofType: "mp3")
+            let path = Bundle.main.path(forResource: map[i]!, ofType: "mp3")
             let url = URL(fileURLWithPath: path!)
             
             do {
-                sounds[map[i]!] = try AVAudioPlayer(contentsOf: url)
+                sounds[map[i]!] = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
                 sounds[map[i]!]?.prepareToPlay()
             } catch let error as NSError {
                 print(error.description)
@@ -188,5 +197,17 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         for i in activeStart...activeEnd {
             activeKeys[i] = keys[i]
         }
+    }
+    
+    func changePosition(velocity:Double, accel:Double, timeElapsed:Double) {
+        
+    }
+    
+    func getVelocity(accel:Double, timeElapsed:Double) {
+        
+    }
+    
+    func getTimeElapsed(time:Double) {
+        
     }
 }

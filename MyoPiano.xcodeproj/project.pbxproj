@@ -7,20 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3305D88B2079545500F1AD09 /* A3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D87F2079545200F1AD09 /* A3.mp3 */; };
-		3305D88C2079545500F1AD09 /* D4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8802079545300F1AD09 /* D4.mp3 */; };
-		3305D88D2079545500F1AD09 /* C4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8812079545300F1AD09 /* C4.mp3 */; };
-		3305D88E2079545500F1AD09 /* B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8822079545300F1AD09 /* B4.mp3 */; };
-		3305D88F2079545500F1AD09 /* B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8832079545300F1AD09 /* B3.mp3 */; };
-		3305D8902079545500F1AD09 /* E4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8842079545300F1AD09 /* E4.mp3 */; };
-		3305D8912079545500F1AD09 /* F4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8852079545400F1AD09 /* F4.mp3 */; };
-		3305D8922079545500F1AD09 /* A4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8862079545400F1AD09 /* A4.mp3 */; };
-		3305D8932079545500F1AD09 /* C3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8872079545400F1AD09 /* C3.mp3 */; };
-		3305D8942079545500F1AD09 /* F3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8882079545400F1AD09 /* F3.mp3 */; };
-		3305D8952079545500F1AD09 /* E3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D8892079545400F1AD09 /* E3.mp3 */; };
-		3305D8962079545500F1AD09 /* D3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D88A2079545500F1AD09 /* D3.mp3 */; };
-		3305D899207956CA00F1AD09 /* G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D897207956CA00F1AD09 /* G3.mp3 */; };
-		3305D89A207956CA00F1AD09 /* G4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3305D898207956CA00F1AD09 /* G4.mp3 */; };
+		06DF7BE9CC87A9A170CA681B /* Pods_MyoPianoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */; };
 		5112BE0620793EF60014566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0520793EF60014566B /* AppDelegate.swift */; };
 		5112BE0820793EF60014566B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0720793EF60014566B /* ViewController.swift */; };
 		5112BE0B20793EF60014566B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE0920793EF60014566B /* Main.storyboard */; };
@@ -35,6 +22,22 @@
 		5112BE4120793F960014566B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE4020793F960014566B /* UIKit.framework */; };
 		5112BE4320793F9D0014566B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5112BE4220793F9D0014566B /* Foundation.framework */; };
 		5112BE4520793FFF0014566B /* GLKitPolyfill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE4420793FFF0014566B /* GLKitPolyfill.m */; };
+		5112BE5820796BE20014566B /* B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4A20796BE00014566B /* B3.mp3 */; };
+		5112BE5920796BE20014566B /* C4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4B20796BE10014566B /* C4.mp3 */; };
+		5112BE5A20796BE20014566B /* F3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4C20796BE10014566B /* F3.mp3 */; };
+		5112BE5B20796BE20014566B /* G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4D20796BE10014566B /* G3.mp3 */; };
+		5112BE5C20796BE20014566B /* G4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4E20796BE10014566B /* G4.mp3 */; };
+		5112BE5D20796BE20014566B /* D4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE4F20796BE10014566B /* D4.mp3 */; };
+		5112BE5E20796BE20014566B /* E3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5020796BE10014566B /* E3.mp3 */; };
+		5112BE5F20796BE20014566B /* A4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5120796BE10014566B /* A4.mp3 */; };
+		5112BE6020796BE20014566B /* F4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5220796BE10014566B /* F4.mp3 */; };
+		5112BE6120796BE20014566B /* A3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5320796BE10014566B /* A3.mp3 */; };
+		5112BE6220796BE20014566B /* D3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5420796BE10014566B /* D3.mp3 */; };
+		5112BE6320796BE20014566B /* C3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5520796BE20014566B /* C3.mp3 */; };
+		5112BE6420796BE20014566B /* B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5620796BE20014566B /* B4.mp3 */; };
+		5112BE6520796BE20014566B /* E4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5720796BE20014566B /* E4.mp3 */; };
+		6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */; };
+		A481FF377EA6CD8AECA66FDF /* Pods_MyoPianoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,20 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3305D87F2079545200F1AD09 /* A3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A3.mp3; sourceTree = "<group>"; };
-		3305D8802079545300F1AD09 /* D4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D4.mp3; sourceTree = "<group>"; };
-		3305D8812079545300F1AD09 /* C4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C4.mp3; sourceTree = "<group>"; };
-		3305D8822079545300F1AD09 /* B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B4.mp3; sourceTree = "<group>"; };
-		3305D8832079545300F1AD09 /* B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B3.mp3; sourceTree = "<group>"; };
-		3305D8842079545300F1AD09 /* E4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E4.mp3; sourceTree = "<group>"; };
-		3305D8852079545400F1AD09 /* F4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = F4.mp3; sourceTree = "<group>"; };
-		3305D8862079545400F1AD09 /* A4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A4.mp3; sourceTree = "<group>"; };
-		3305D8872079545400F1AD09 /* C3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C3.mp3; sourceTree = "<group>"; };
-		3305D8882079545400F1AD09 /* F3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = F3.mp3; sourceTree = "<group>"; };
-		3305D8892079545400F1AD09 /* E3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E3.mp3; sourceTree = "<group>"; };
-		3305D88A2079545500F1AD09 /* D3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D3.mp3; sourceTree = "<group>"; };
-		3305D897207956CA00F1AD09 /* G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = G3.mp3; sourceTree = "<group>"; };
-		3305D898207956CA00F1AD09 /* G4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = G4.mp3; sourceTree = "<group>"; };
+		05FBDC85605F8513A8FFA477 /* Pods-MyoPianoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoUITests/Pods-MyoPianoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPianoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE6612475FE1CAA75D360FB /* Pods-MyoPianoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoUITests/Pods-MyoPianoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4DFB0C8CB650BBC3B6B56E59 /* Pods-MyoPianoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoTests/Pods-MyoPianoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5112BE0220793EF60014566B /* MyoPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyoPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5112BE0520793EF60014566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5112BE0720793EF60014566B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +84,25 @@
 		5112BE4220793F9D0014566B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5112BE4420793FFF0014566B /* GLKitPolyfill.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLKitPolyfill.m; sourceTree = "<group>"; };
 		5112BE46207940120014566B /* GLKitPolyfill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLKitPolyfill.h; sourceTree = "<group>"; };
+		5112BE4A20796BE00014566B /* B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B3.mp3; sourceTree = "<group>"; };
+		5112BE4B20796BE10014566B /* C4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C4.mp3; sourceTree = "<group>"; };
+		5112BE4C20796BE10014566B /* F3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = F3.mp3; sourceTree = "<group>"; };
+		5112BE4D20796BE10014566B /* G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = G3.mp3; sourceTree = "<group>"; };
+		5112BE4E20796BE10014566B /* G4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = G4.mp3; sourceTree = "<group>"; };
+		5112BE4F20796BE10014566B /* D4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D4.mp3; sourceTree = "<group>"; };
+		5112BE5020796BE10014566B /* E3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E3.mp3; sourceTree = "<group>"; };
+		5112BE5120796BE10014566B /* A4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A4.mp3; sourceTree = "<group>"; };
+		5112BE5220796BE10014566B /* F4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = F4.mp3; sourceTree = "<group>"; };
+		5112BE5320796BE10014566B /* A3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A3.mp3; sourceTree = "<group>"; };
+		5112BE5420796BE10014566B /* D3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D3.mp3; sourceTree = "<group>"; };
+		5112BE5520796BE20014566B /* C3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C3.mp3; sourceTree = "<group>"; };
+		5112BE5620796BE20014566B /* B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B4.mp3; sourceTree = "<group>"; };
+		5112BE5720796BE20014566B /* E4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E4.mp3; sourceTree = "<group>"; };
+		5D0A0F84D36D84A74F59CB1D /* Pods-MyoPianoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoTests/Pods-MyoPianoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5EE65B6AD9A413B4D8103D7E /* Pods-MyoPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPiano/Pods-MyoPiano.debug.xcconfig"; sourceTree = "<group>"; };
+		7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPiano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPianoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0C905E6E8B119B5ECD4E45 /* Pods-MyoPiano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPiano.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPiano/Pods-MyoPiano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 				5112BE3F20793F8B0014566B /* MyoKit.framework in Frameworks */,
 				5112BE3D20793F820014566B /* SystemConfiguration.framework in Frameworks */,
 				5112BE3B20793F730014566B /* CoreBluetooth.framework in Frameworks */,
+				6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DF7BE9CC87A9A170CA681B /* Pods_MyoPianoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,33 +131,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A481FF377EA6CD8AECA66FDF /* Pods_MyoPianoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3305D89B2079677E00F1AD09 /* audio */ = {
-			isa = PBXGroup;
-			children = (
-				3305D897207956CA00F1AD09 /* G3.mp3 */,
-				3305D898207956CA00F1AD09 /* G4.mp3 */,
-				3305D87F2079545200F1AD09 /* A3.mp3 */,
-				3305D8862079545400F1AD09 /* A4.mp3 */,
-				3305D8832079545300F1AD09 /* B3.mp3 */,
-				3305D8822079545300F1AD09 /* B4.mp3 */,
-				3305D8872079545400F1AD09 /* C3.mp3 */,
-				3305D8812079545300F1AD09 /* C4.mp3 */,
-				3305D88A2079545500F1AD09 /* D3.mp3 */,
-				3305D8802079545300F1AD09 /* D4.mp3 */,
-				3305D8892079545400F1AD09 /* E3.mp3 */,
-				3305D8842079545300F1AD09 /* E4.mp3 */,
-				3305D8882079545400F1AD09 /* F3.mp3 */,
-				3305D8852079545400F1AD09 /* F4.mp3 */,
-			);
-			path = audio;
-			sourceTree = "<group>";
-		};
 		5112BDF920793EF60014566B = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +146,7 @@
 				5112BE2720793EF80014566B /* MyoPianoUITests */,
 				5112BE0320793EF60014566B /* Products */,
 				5112BE3920793F720014566B /* Frameworks */,
+				CB26438ED9DD577004AC86E8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,7 +163,7 @@
 		5112BE0420793EF60014566B /* MyoPiano */ = {
 			isa = PBXGroup;
 			children = (
-				3305D89B2079677E00F1AD09 /* audio */,
+				5112BE4920796BD10014566B /* audio */,
 				5112BE0520793EF60014566B /* AppDelegate.swift */,
 				5112BE0720793EF60014566B /* ViewController.swift */,
 				5112BE0920793EF60014566B /* Main.storyboard */,
@@ -209,8 +204,46 @@
 				5112BE3E20793F8B0014566B /* MyoKit.framework */,
 				5112BE3C20793F820014566B /* SystemConfiguration.framework */,
 				5112BE3A20793F730014566B /* CoreBluetooth.framework */,
+				7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */,
+				1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */,
+				8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5112BE4920796BD10014566B /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				5112BE5320796BE10014566B /* A3.mp3 */,
+				5112BE5120796BE10014566B /* A4.mp3 */,
+				5112BE4A20796BE00014566B /* B3.mp3 */,
+				5112BE5620796BE20014566B /* B4.mp3 */,
+				5112BE5520796BE20014566B /* C3.mp3 */,
+				5112BE4B20796BE10014566B /* C4.mp3 */,
+				5112BE5420796BE10014566B /* D3.mp3 */,
+				5112BE4F20796BE10014566B /* D4.mp3 */,
+				5112BE5020796BE10014566B /* E3.mp3 */,
+				5112BE5720796BE20014566B /* E4.mp3 */,
+				5112BE4C20796BE10014566B /* F3.mp3 */,
+				5112BE5220796BE10014566B /* F4.mp3 */,
+				5112BE4D20796BE10014566B /* G3.mp3 */,
+				5112BE4E20796BE10014566B /* G4.mp3 */,
+			);
+			name = audio;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CB26438ED9DD577004AC86E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EE65B6AD9A413B4D8103D7E /* Pods-MyoPiano.debug.xcconfig */,
+				FE0C905E6E8B119B5ECD4E45 /* Pods-MyoPiano.release.xcconfig */,
+				5D0A0F84D36D84A74F59CB1D /* Pods-MyoPianoTests.debug.xcconfig */,
+				4DFB0C8CB650BBC3B6B56E59 /* Pods-MyoPianoTests.release.xcconfig */,
+				05FBDC85605F8513A8FFA477 /* Pods-MyoPianoUITests.debug.xcconfig */,
+				1DE6612475FE1CAA75D360FB /* Pods-MyoPianoUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5112BE2D20793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPiano" */;
 			buildPhases = (
+				0124E6AE382C78E3A6E815C0 /* [CP] Check Pods Manifest.lock */,
 				5112BDFE20793EF60014566B /* Sources */,
 				5112BDFF20793EF60014566B /* Frameworks */,
 				5112BE0020793EF60014566B /* Resources */,
@@ -237,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5112BE3020793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoTests" */;
 			buildPhases = (
+				13DCA5400E51F7F67D49FAF3 /* [CP] Check Pods Manifest.lock */,
 				5112BE1520793EF80014566B /* Sources */,
 				5112BE1620793EF80014566B /* Frameworks */,
 				5112BE1720793EF80014566B /* Resources */,
@@ -255,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5112BE3320793EF80014566B /* Build configuration list for PBXNativeTarget "MyoPianoUITests" */;
 			buildPhases = (
+				8871AEC7383413143C98CC3D /* [CP] Check Pods Manifest.lock */,
 				5112BE2020793EF80014566B /* Sources */,
 				5112BE2120793EF80014566B /* Frameworks */,
 				5112BE2220793EF80014566B /* Resources */,
@@ -318,23 +354,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3305D8962079545500F1AD09 /* D3.mp3 in Resources */,
-				3305D8942079545500F1AD09 /* F3.mp3 in Resources */,
-				3305D8912079545500F1AD09 /* F4.mp3 in Resources */,
-				3305D8922079545500F1AD09 /* A4.mp3 in Resources */,
-				3305D8932079545500F1AD09 /* C3.mp3 in Resources */,
-				3305D89A207956CA00F1AD09 /* G4.mp3 in Resources */,
-				3305D8952079545500F1AD09 /* E3.mp3 in Resources */,
-				3305D8902079545500F1AD09 /* E4.mp3 in Resources */,
-				3305D88C2079545500F1AD09 /* D4.mp3 in Resources */,
-				3305D88F2079545500F1AD09 /* B3.mp3 in Resources */,
-				3305D88D2079545500F1AD09 /* C4.mp3 in Resources */,
-				3305D88B2079545500F1AD09 /* A3.mp3 in Resources */,
+				5112BE6220796BE20014566B /* D3.mp3 in Resources */,
+				5112BE6020796BE20014566B /* F4.mp3 in Resources */,
+				5112BE5E20796BE20014566B /* E3.mp3 in Resources */,
+				5112BE5D20796BE20014566B /* D4.mp3 in Resources */,
+				5112BE5820796BE20014566B /* B3.mp3 in Resources */,
+				5112BE5920796BE20014566B /* C4.mp3 in Resources */,
 				5112BE1320793EF80014566B /* LaunchScreen.storyboard in Resources */,
-				3305D88E2079545500F1AD09 /* B4.mp3 in Resources */,
+				5112BE5F20796BE20014566B /* A4.mp3 in Resources */,
+				5112BE5A20796BE20014566B /* F3.mp3 in Resources */,
+				5112BE6520796BE20014566B /* E4.mp3 in Resources */,
+				5112BE6420796BE20014566B /* B4.mp3 in Resources */,
+				5112BE6120796BE20014566B /* A3.mp3 in Resources */,
+				5112BE6320796BE20014566B /* C3.mp3 in Resources */,
 				5112BE1020793EF80014566B /* Assets.xcassets in Resources */,
-				3305D899207956CA00F1AD09 /* G3.mp3 in Resources */,
 				5112BE0B20793EF60014566B /* Main.storyboard in Resources */,
+				5112BE5B20796BE20014566B /* G3.mp3 in Resources */,
+				5112BE5C20796BE20014566B /* G4.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +389,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0124E6AE382C78E3A6E815C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyoPiano-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13DCA5400E51F7F67D49FAF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyoPianoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8871AEC7383413143C98CC3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyoPianoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5112BDFE20793EF60014566B /* Sources */ = {
@@ -533,6 +626,7 @@
 		};
 		5112BE2E20793EF80014566B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EE65B6AD9A413B4D8103D7E /* Pods-MyoPiano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -544,10 +638,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
@@ -559,6 +650,7 @@
 		};
 		5112BE2F20793EF80014566B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0C905E6E8B119B5ECD4E45 /* Pods-MyoPiano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -570,10 +662,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
@@ -584,17 +673,14 @@
 		};
 		5112BE3120793EF80014566B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D0A0F84D36D84A74F59CB1D /* Pods-MyoPianoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -605,17 +691,14 @@
 		};
 		5112BE3220793EF80014566B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DFB0C8CB650BBC3B6B56E59 /* Pods-MyoPianoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -626,16 +709,13 @@
 		};
 		5112BE3420793EF80014566B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05FBDC85605F8513A8FFA477 /* Pods-MyoPianoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -646,16 +726,13 @@
 		};
 		5112BE3520793EF80014566B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE6612475FE1CAA75D360FB /* Pods-MyoPianoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
