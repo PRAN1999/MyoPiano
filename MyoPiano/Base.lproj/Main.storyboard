@@ -22,90 +22,91 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-ee-z24">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LON-9l-9M3">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LON-9l-9M3">
                                         <rect key="frame" x="-3" y="0.0" width="667" height="375"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dO-p0-RvB">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dO-p0-RvB">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TN9-GO-zuf">
-                                                <rect key="frame" x="50" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TN9-GO-zuf">
+                                                <rect key="frame" x="48" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7M-KS-aqs">
-                                                <rect key="frame" x="100" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7M-KS-aqs">
+                                                <rect key="frame" x="95.5" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-3x-Ogj">
-                                                <rect key="frame" x="150" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-3x-Ogj">
+                                                <rect key="frame" x="143.5" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fes-Nw-unI">
-                                                <rect key="frame" x="200" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fes-Nw-unI">
+                                                <rect key="frame" x="191.5" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6x-JA-7Ok">
-                                                <rect key="frame" x="250" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6x-JA-7Ok">
+                                                <rect key="frame" x="239.5" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Qs-sa-FV4">
-                                                <rect key="frame" x="300" y="0.0" width="49.5" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qs-sa-FV4">
+                                                <rect key="frame" x="287" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sry-4j-DLY">
-                                                <rect key="frame" x="349.5" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sry-4j-DLY">
+                                                <rect key="frame" x="335" y="0.0" width="48" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbG-HD-2Yt">
-                                                <rect key="frame" x="399.5" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbG-HD-2Yt">
+                                                <rect key="frame" x="383" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVi-mP-ISc">
-                                                <rect key="frame" x="449.5" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVi-mP-ISc">
+                                                <rect key="frame" x="430.5" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DnA-1X-Khg">
-                                                <rect key="frame" x="499.5" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnA-1X-Khg">
+                                                <rect key="frame" x="478" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vd9-Cf-GkD">
-                                                <rect key="frame" x="549.5" y="0.0" width="50" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd9-Cf-GkD">
+                                                <rect key="frame" x="525.5" y="0.0" width="47" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqe-1l-GCd">
-                                                <rect key="frame" x="599.5" y="0.0" width="0.0" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqe-1l-GCd">
+                                                <rect key="frame" x="572.5" y="0.0" width="47" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mpJ-g9-HmN">
-                                                <rect key="frame" x="599.5" y="0.0" width="50" height="375"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mew-Rd-ftn">
-                                                <rect key="frame" x="649.5" y="0.0" width="17.5" height="375"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpJ-g9-HmN">
+                                                <rect key="frame" x="619.5" y="0.0" width="47.5" height="375"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="TN9-GO-zuf" firstAttribute="width" secondItem="E7M-KS-aqs" secondAttribute="width" id="1Tt-Pa-z1Z"/>
+                                            <constraint firstItem="iqe-1l-GCd" firstAttribute="width" secondItem="mpJ-g9-HmN" secondAttribute="width" id="9SJ-Ol-TyS"/>
                                             <constraint firstItem="DnA-1X-Khg" firstAttribute="width" secondItem="vd9-Cf-GkD" secondAttribute="width" id="9yG-vN-HWd"/>
                                             <constraint firstItem="kbG-HD-2Yt" firstAttribute="width" secondItem="JVi-mP-ISc" secondAttribute="width" id="FR6-XD-I10"/>
+                                            <constraint firstItem="vd9-Cf-GkD" firstAttribute="width" secondItem="iqe-1l-GCd" secondAttribute="width" id="LBD-SQ-5dl"/>
                                             <constraint firstItem="JVi-mP-ISc" firstAttribute="width" secondItem="DnA-1X-Khg" secondAttribute="width" id="RnU-y2-Qrj"/>
                                             <constraint firstItem="sry-4j-DLY" firstAttribute="width" secondItem="kbG-HD-2Yt" secondAttribute="width" id="buB-CR-0ml"/>
                                             <constraint firstItem="fes-Nw-unI" firstAttribute="width" secondItem="O6x-JA-7Ok" secondAttribute="width" id="gbD-xd-d6f"/>
                                             <constraint firstItem="E7M-KS-aqs" firstAttribute="width" secondItem="dIx-3x-Ogj" secondAttribute="width" id="i2L-ix-LG3"/>
-                                            <constraint firstItem="vd9-Cf-GkD" firstAttribute="width" secondItem="mpJ-g9-HmN" secondAttribute="width" id="pwK-W3-aqu"/>
                                             <constraint firstItem="2dO-p0-RvB" firstAttribute="width" secondItem="TN9-GO-zuf" secondAttribute="width" id="rxc-iJ-ycb"/>
                                             <constraint firstItem="6Qs-sa-FV4" firstAttribute="width" secondItem="sry-4j-DLY" secondAttribute="width" id="vrW-Ey-LSv"/>
                                             <constraint firstItem="O6x-JA-7Ok" firstAttribute="width" secondItem="6Qs-sa-FV4" secondAttribute="width" id="wHS-EJ-PDV"/>
                                             <constraint firstItem="dIx-3x-Ogj" firstAttribute="width" secondItem="fes-Nw-unI" secondAttribute="width" id="ygp-dG-0hk"/>
                                         </constraints>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="blackKeys2" translatesAutoresizingMaskIntoConstraints="NO" id="bfd-Og-RsV">
-                                        <rect key="frame" x="-3" y="0.0" width="636" height="199"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackKeys" translatesAutoresizingMaskIntoConstraints="NO" id="bfd-Og-RsV">
+                                        <rect key="frame" x="-3" y="0.0" width="667" height="199"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="199" id="xYZ-Vf-Ko9"/>
+                                        </constraints>
                                     </imageView>
-                                    <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itg-v1-2Jf">
+                                    <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itg-v1-2Jf">
                                         <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items>
                                             <barButtonItem image="settings" style="plain" id="h8Y-oS-glC">
                                                 <connections>
@@ -125,9 +126,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="bfd-Og-RsV" firstAttribute="top" secondItem="itg-v1-2Jf" secondAttribute="top" id="5bt-Yi-Akh"/>
+                                    <constraint firstItem="bfd-Og-RsV" firstAttribute="leading" secondItem="LON-9l-9M3" secondAttribute="leading" id="5dx-94-xav"/>
                                     <constraint firstAttribute="trailing" secondItem="itg-v1-2Jf" secondAttribute="trailing" id="I7K-3S-HOZ"/>
                                     <constraint firstItem="itg-v1-2Jf" firstAttribute="top" secondItem="l2a-ee-z24" secondAttribute="top" id="Ogc-rz-ptN"/>
-                                    <constraint firstItem="bfd-Og-RsV" firstAttribute="width" secondItem="l2a-ee-z24" secondAttribute="height" multiplier="212:125" id="qTr-FC-ZPf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LON-9l-9M3" secondAttribute="bottom" id="XAE-3c-ylm"/>
+                                    <constraint firstItem="bfd-Og-RsV" firstAttribute="top" secondItem="LON-9l-9M3" secondAttribute="top" id="XQM-Wp-3FE"/>
+                                    <constraint firstItem="bfd-Og-RsV" firstAttribute="width" secondItem="l2a-ee-z24" secondAttribute="height" multiplier="212:125" constant="31" id="qTr-FC-ZPf"/>
                                     <constraint firstItem="itg-v1-2Jf" firstAttribute="leading" secondItem="l2a-ee-z24" secondAttribute="leading" id="u63-fp-daQ"/>
                                 </constraints>
                             </view>
@@ -136,7 +141,7 @@
                         <constraints>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="l2a-ee-z24" secondAttribute="trailing" id="0KZ-uh-D0A"/>
                             <constraint firstItem="LON-9l-9M3" firstAttribute="width" secondItem="o5Z-0d-MDG" secondAttribute="width" id="5SB-md-PLt"/>
-                            <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="bfd-Og-RsV" secondAttribute="trailing" constant="34" id="CKs-un-REK"/>
+                            <constraint firstItem="kaI-K1-ECn" firstAttribute="trailing" secondItem="bfd-Og-RsV" secondAttribute="trailing" constant="3" id="CKs-un-REK"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="leading" secondItem="bfd-Og-RsV" secondAttribute="leading" constant="3" id="JAL-o7-iob"/>
                             <constraint firstItem="kaI-K1-ECn" firstAttribute="bottom" secondItem="l2a-ee-z24" secondAttribute="bottom" id="XLY-Ix-Bcp"/>
                             <constraint firstItem="l2a-ee-z24" firstAttribute="leading" secondItem="kaI-K1-ECn" secondAttribute="leading" id="ZbR-3O-n0s"/>
@@ -148,6 +153,20 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="connectionItem" destination="Z4T-ro-QZt" id="Ypz-WE-u4C"/>
+                        <outlet property="key1" destination="2dO-p0-RvB" id="QYf-eD-xpZ"/>
+                        <outlet property="key10" destination="JVi-mP-ISc" id="vHM-BD-srj"/>
+                        <outlet property="key11" destination="DnA-1X-Khg" id="cVt-xH-0Ms"/>
+                        <outlet property="key12" destination="vd9-Cf-GkD" id="2rm-rb-uK6"/>
+                        <outlet property="key13" destination="iqe-1l-GCd" id="zxW-PF-8vx"/>
+                        <outlet property="key14" destination="mpJ-g9-HmN" id="P3G-fP-0Cn"/>
+                        <outlet property="key2" destination="TN9-GO-zuf" id="Q6M-k1-TMH"/>
+                        <outlet property="key3" destination="E7M-KS-aqs" id="zZy-vT-jsO"/>
+                        <outlet property="key4" destination="dIx-3x-Ogj" id="RXC-gA-f72"/>
+                        <outlet property="key5" destination="fes-Nw-unI" id="oUn-Bs-mCW"/>
+                        <outlet property="key6" destination="O6x-JA-7Ok" id="n7I-h3-Cy2"/>
+                        <outlet property="key7" destination="6Qs-sa-FV4" id="1RJ-AZ-uhT"/>
+                        <outlet property="key8" destination="sry-4j-DLY" id="C8f-87-I2w"/>
+                        <outlet property="key9" destination="kbG-HD-2Yt" id="P8g-DD-Xa0"/>
                         <outlet property="pianoView" destination="l2a-ee-z24" id="5rn-DC-gxW"/>
                         <outlet property="toolbar" destination="itg-v1-2Jf" id="aro-fB-C26"/>
                     </connections>
@@ -158,7 +177,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blackKeys2" width="1996" height="392"/>
+        <image name="blackKeys" width="2194" height="392"/>
         <image name="settings" width="24" height="24"/>
     </resources>
 </document>

@@ -20,6 +20,24 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var arr1Fill:Bool = true
     var arr2Fill: Bool = false
     
+    @IBOutlet weak var key1: UIView!
+    @IBOutlet weak var key2: UIView!
+    @IBOutlet weak var key3: UIView!
+    @IBOutlet weak var key4: UIView!
+    @IBOutlet weak var key5: UIView!
+    @IBOutlet weak var key6: UIView!
+    @IBOutlet weak var key7: UIView!
+    @IBOutlet weak var key8: UIView!
+    @IBOutlet weak var key9: UIView!
+    @IBOutlet weak var key10: UIView!
+    @IBOutlet weak var key11: UIView!
+    @IBOutlet weak var key12: UIView!
+    @IBOutlet weak var key13: UIView!
+    @IBOutlet weak var key14: UIView!
+    
+    var keys: [UIView]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let notifer = NotificationCenter.default
@@ -38,6 +56,15 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         pianoView.addGestureRecognizer(tap)
         
         toolbar.isTranslucent = true
+        
+        keys = [key1, key2, key3, key4, key5, key6, key7, key8,
+                key9, key10, key11, key12, key13, key14]
+        
+        for key in keys {
+            key.layer.borderColor = UIColor.black.cgColor
+            key.layer.borderWidth = 0.7
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
