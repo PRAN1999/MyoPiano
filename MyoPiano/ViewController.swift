@@ -11,7 +11,8 @@ import UIKit
 
 class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var currentPose: TLMPose!
-    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var libToolbar: UIToolbar!
+    @IBOutlet weak var connectToolbar: UIToolbar!
     @IBOutlet weak var pianoView: UIView!
     @IBOutlet weak var connectionItem: UIBarButtonItem!
     
@@ -55,7 +56,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         tap.delegate = self
         pianoView.addGestureRecognizer(tap)
         
-        toolbar.isTranslucent = true
+        connectToolbar.isTranslucent = true
+        libToolbar.isTranslucent = true
         
         keys = [key1, key2, key3, key4, key5, key6, key7, key8,
                 key9, key10, key11, key12, key13, key14]
@@ -79,7 +81,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
         UIView.animate(withDuration: 2, animations: { () -> Void in
-            self.toolbar.isHidden = !self.toolbar.isHidden
+            self.connectToolbar.isHidden = !self.connectToolbar.isHidden
+            self.libToolbar.isHidden = !self.libToolbar.isHidden
         })
     }
     // MARK: NSNotificationCenter Methods
