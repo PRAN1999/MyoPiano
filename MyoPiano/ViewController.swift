@@ -51,7 +51,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
-        toolbar.isHidden = !toolbar.isHidden
+        UIView.animate(withDuration: 2, animations: { () -> Void in
+            self.toolbar.isHidden = !self.toolbar.isHidden
+        })
     }
     // MARK: NSNotificationCenter Methods
     
