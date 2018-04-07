@@ -37,7 +37,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key13: UIView!
     @IBOutlet weak var key14: UIView!
     
-    var keys: [UIView]!
+    var keys: [UIView]!, activeKeys: [UIView]!
+    var pressedKey:UIView!
+    var activeStart:Int!, activeEnd:Int!
     
     
     override func viewDidLoad() {
@@ -62,6 +64,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         keys = [key1, key2, key3, key4, key5, key6, key7, key8,
                 key9, key10, key11, key12, key13, key14]
+        
+        activeStart = 5; activeEnd = 9;
+        
+        for i in activeStart...activeEnd {
+            activeKeys.append(keys[i])
+        }
         
         for key in keys {
             key.layer.borderColor = UIColor.black.cgColor
