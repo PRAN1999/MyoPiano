@@ -21,7 +21,7 @@
 
 + (void)loadGraph {
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference4" ofType:@"pb"];
 
     [self loadGraphFromPath:path];
     
@@ -37,10 +37,10 @@
     }
 
     // This prints out the names of the nodes in the graph.
-    auto nodeCount = (graph).node_size();
-    for (auto i = 0; i < nodeCount; ++i) {
-        auto node = (graph).node(i);
-    }
+//    auto nodeCount = (graph).node_size();
+//    for (auto i = 0; i < nodeCount; ++i) {
+//        auto node = (graph).node(i);
+//    }
 
     return YES;
 }
@@ -101,8 +101,19 @@
             return -1;
         }
         
+        /**
+         * Thresholds:
+         pinkie: -2
+         ring: -5
+         middle: 3-5
+         index: 0-1
+         thumb: 2.5
+         none:
+         */
         auto result = outputs[0].tensor<float, 2>();
         float max = result(0);
+        if(max > -3.5)
+            return 0;
         int maxIndex = 0;
         int i = 1;
         while(i < 6) {
@@ -110,6 +121,7 @@
                 maxIndex = i;
                 max = result(i);
             }
+            NSLog(@"Result %d: %f", i, result(i));
             i++;
         }
         session->Close();
