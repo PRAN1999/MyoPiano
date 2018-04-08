@@ -34,7 +34,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key14: UIView!
     
     //2D arrays for holding EMG data, and their corresponding "fill" flags
-    var arr1 = Array(repeating: Array(repeating: 0, count: 8), count: 100), arr2 = Array(repeating: Array(repeating: 0, count: 8), count: 100)
+    var arr1: [Float] = [], arr2: [Float] = []
     var ct1 = 0, ct2 = 0
     var arr2Fill: Bool = false
     
@@ -115,15 +115,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             i += 1
         }
         
-        
-        //Indicates which keys the user can press, activeStart pointing to the
-        //thumb and activeEnd pointing to pinkie
         activeStart = 5
-        
-        //Unnecesary since we only need to keep track of where the thumb is
-//        for i in activeStart...activeEnd {
-//            activeKeys.append(keys[i])
-//        }
+        updateKeys()
+        updatePressedKey(7)
     }
     
     override func didReceiveMemoryWarning() {
@@ -172,7 +166,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         var userInfo = notification.userInfo
         let data = userInfo![kTLMKeyEMGEvent] as! TLMEmgEvent
         
-        arr1[ct1] = data.rawData as! [Int]
+        arr1 += (data.rawData as! [Float])
         ct1+=1
         
         if(!arr2Fill) {
@@ -180,15 +174,15 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             else { arr2Fill = true }
         }
         
-        arr2[ct2] = data.rawData as! [Int]
+        arr2 += (data.rawData as! [Float])
         ct2+=1
         
         if(ct1 == 100) {
             print(arr1)
-            ct1 = 0
+            arr1 = []
         } else if(ct2 == 100) {
             print(arr2)
-            ct2 = 0
+            arr2 = []
         }
     }
     
@@ -231,13 +225,13 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     //Update the color of the key actually being pressed (the one predicted
     //by the model)
-    func updateActiveKey(_ activeIndex: Int) {
-        for i in activeStart...(activeStart+5) {
+    func updatePressedKey(_ activeIndex: Int) {
+        for i in activeStart...(activeStart+4) {
             let key: UIView = keys[i]
             if(i == activeIndex) {
-                key.backgroundColor = UIColor(red: 126, green: 183, blue: 128, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 126.0/255, green: 183.0/255, blue: 128.0/255, alpha: 1.0)
             } else {
-                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 214.0/255, green: 213.0/255, blue: 179.0/255, alpha: 1.0)
             }
         }
     }
@@ -247,10 +241,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     func updateKeys() {
         for i in 0...13 {
             let key: UIView = keys[i]
-            if(i < activeStart && i > activeStart + 5) {
-                key.backgroundColor = UIColor(red: 245, green: 219, blue: 203, alpha: 1.0)
+            if(i < activeStart || i > activeStart + 4) {
+                key.backgroundColor = UIColor(red: 245.0/255, green: 219.0/255, blue: 203.0/255, alpha: 1.0)
             } else {
-                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 214.0/255, green: 213.0/255, blue: 179.0/255, alpha: 1.0)
             }
         }
     }

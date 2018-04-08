@@ -106,7 +106,8 @@ tensorflow::Session *session;
         }
         
         auto result = outputs[0].tensor<float, 2>();
-        NSLog(@"%@", result);
+        NSLog(@"%s", "YAYYYYYY!!!!\n\n\n\n\n");
+        
         session->Close();
     }
     return -1;
