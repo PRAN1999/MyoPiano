@@ -219,6 +219,19 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         return lastVelocity + (accel * timeElapsed)
     }
     
+    func updateActiveKey() {
+        
+    }
+    
+    func updateKeys() {
+        
+    }
+    
+    func testModel() {
+        var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
+        Model.predict(UnsafeMutablePointer<Float>(&arr))
+    }
+    
     //Generates an audio file by concatenating all the
     //audio filenames given in list provided
     func createSound(soundFiles: [String], outputFile: String) {
