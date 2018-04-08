@@ -36,6 +36,7 @@
 		5112BE6320796BE20014566B /* C3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5520796BE20014566B /* C3.mp3 */; };
 		5112BE6420796BE20014566B /* B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5620796BE20014566B /* B4.mp3 */; };
 		5112BE6520796BE20014566B /* E4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5720796BE20014566B /* E4.mp3 */; };
+		518FC9C82079C74D00BE4BB5 /* inference.pb in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9C72079C59C00BE4BB5 /* inference.pb */; };
 		51F40A4420798B0B00A53F66 /* tensorflow_experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */; };
 		51F40A4820798C0F00A53F66 /* Model.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51F40A4720798C0F00A53F66 /* Model.mm */; };
 		6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */; };
@@ -100,7 +101,7 @@
 		5112BE5520796BE20014566B /* C3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C3.mp3; sourceTree = "<group>"; };
 		5112BE5620796BE20014566B /* B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B4.mp3; sourceTree = "<group>"; };
 		5112BE5720796BE20014566B /* E4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E4.mp3; sourceTree = "<group>"; };
-		518FC9C22079A73400BE4BB5 /* inference.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference.pb; sourceTree = "<group>"; };
+		518FC9C72079C59C00BE4BB5 /* inference.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference.pb; sourceTree = "<group>"; };
 		51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tensorflow_experimental.framework; path = "Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework"; sourceTree = "<group>"; };
 		51F40A4720798C0F00A53F66 /* Model.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Model.mm; sourceTree = "<group>"; };
 		51F40A4920798E5100A53F66 /* Model.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 		5112BE0420793EF60014566B /* MyoPiano */ = {
 			isa = PBXGroup;
 			children = (
+				518FC9C72079C59C00BE4BB5 /* inference.pb */,
 				5112BE4920796BD10014566B /* audio */,
 				5112BE0520793EF60014566B /* AppDelegate.swift */,
 				5112BE0720793EF60014566B /* ViewController.swift */,
@@ -183,7 +185,6 @@
 				5112BE46207940120014566B /* GLKitPolyfill.h */,
 				51F40A4920798E5100A53F66 /* Model.h */,
 				51F40A4720798C0F00A53F66 /* Model.mm */,
-				518FC9C22079A73400BE4BB5 /* inference.pb */,
 			);
 			path = MyoPiano;
 			sourceTree = "<group>";
@@ -365,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518FC9C82079C74D00BE4BB5 /* inference.pb in Resources */,
 				5112BE6220796BE20014566B /* D3.mp3 in Resources */,
 				5112BE6020796BE20014566B /* F4.mp3 in Resources */,
 				5112BE5E20796BE20014566B /* E3.mp3 in Resources */,

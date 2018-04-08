@@ -12,7 +12,7 @@
 
 #import "Model.h"
 
-tensorflow::GraphDef graph = tensorflow::GraphDef();
+tensorflow::GraphDef graph;
 tensorflow::Session *session;
 
 
@@ -34,7 +34,7 @@ tensorflow::Session *session;
 {
     auto status = ReadBinaryProto(tensorflow::Env::Default(), path.fileSystemRepresentation, &graph);
     if (!status.ok()) {
-        NSLog(@"Error reading graph: %s", status.error_message().c_str());
+        NSLog(@"Error reading graph: %s", path.fileSystemRepresentation);
         return NO;
     }
 
@@ -70,7 +70,7 @@ tensorflow::Session *session;
 + (int)predict:(float *)example
 {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@".pb"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
     
     if ([self loadGraphFromPath:path] && [self createSession]) {
         // Define the tensor for the input data. This tensor takes one example
