@@ -59,9 +59,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     //Used to keep track of horizontal motion through acceleration data
     var activeStart:Int!, pressed:Int! = -1
     let g: Double = 9.80665 //gravitational constant of acceleration
-    var acceleration: Double = 0.0
-    var lastPosition: Double = 0.0
-    var lastVelocity: Double = 0.0
+    var acceleration: Double = 0.0 //should be in m/(s^2)
+    var lastPosition: Double = 0.0 //presumably in meters
+    var lastVelocity: Double = 0.0 //should be in m/s
     var lastTimestamp: Date = Date.init(timeIntervalSinceNow: 0)
     
     override func viewDidLoad() {
@@ -259,7 +259,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         lastVelocity = getVelocity(accel: acceleration, timeElapsed: elapsedTime)
         lastTimestamp = currTimestamp
         
-        changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
+        let changeInCM = changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
+        lastPosition += changeInCM
+        
+        let possibleStartActive = Int(lastPosition / 2)
+        activeStart = possibleStartActive
+        updateKeys()
     }
     
     func changeActiveKey(activeStart: Int) {
@@ -268,8 +273,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     //Get the updated position using the equation: s_0 + v_0*t + 0.5*a*t^2
     //where s_0 is the previous position
-    func changePosition(velocity:Double, accel:Double, timeElapsed:Double) {
-        lastPosition += (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
+    func changePosition(velocity:Double, accel:Double, timeElapsed:Double) -> Double {
+        let changeInMeters = (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
+        //Add change in centimeters
+        return changeInMeters * 100
     }
     
     //Get the updated velocity using the equation: v_0 + a*t
