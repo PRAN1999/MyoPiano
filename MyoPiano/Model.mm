@@ -106,9 +106,18 @@ tensorflow::Session *session;
         }
         
         auto result = outputs[0].tensor<float, 2>();
-        NSLog(@"%s", "YAYYYYYY!!!!\n\n\n\n\n");
-        
+        float max = result(0);
+        int maxIndex = 0;
+        int i = 1;
+        while(i < 6) {
+            if(result(i) > max) {
+                maxIndex = i;
+                max = result(i);
+            }
+            i++;
+        }
         session->Close();
+        return maxIndex;
     }
     return -1;
 }
