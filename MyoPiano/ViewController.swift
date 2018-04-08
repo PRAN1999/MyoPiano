@@ -192,6 +192,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //When acceleration data is recieved, update timestamp, velocity, and position
     @objc func didRecieveAccelData(_ notification: Notification) {
         //Handle acceleration data
         let userInfo = notification.userInfo
@@ -211,24 +212,79 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         self.activeStart = activeStart
     }
     
+    //Get the updated position using the equation: s_0 + v_0*t + 0.5*a*t^2
+    //where s_0 is the previous position
     func changePosition(velocity:Double, accel:Double, timeElapsed:Double) {
         lastPosition += (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
     }
     
+    //Get the updated velocity using the equation: v_0 + a*t
     func getVelocity(accel:Double, timeElapsed:Double) -> Double {
         return lastVelocity + (accel * timeElapsed)
     }
     
-    func updateActiveKey() {
-        
-    }
-    
-    func updateKeys() {
-        
-    }
-    
+    //Try testing the model
     func testModel() {
         var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
         Model.predict(UnsafeMutablePointer<Float>(&arr))
+    }
+    
+    //Update the color of the key actually being pressed (the one predicted
+    //by the model)
+    func updateActiveKey(_ activeIndex: Int) {
+        for i in activeStart...(activeStart+5) {
+            let key: UIView = keys[i]
+            if(i == activeIndex) {
+                key.backgroundColor = UIColor(red: 126, green: 183, blue: 128, alpha: 1.0)
+            } else {
+                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+            }
+        }
+    }
+    
+    //Update the color so that all the "active keys" (i.e. the ones that
+    //the player can play) are activated and everything else is deactivated
+    func updateKeys() {
+        for i in 0...13 {
+            let key: UIView = keys[i]
+            if(i < activeStart && i > activeStart + 5) {
+                key.backgroundColor = UIColor(red: 245, green: 219, blue: 203, alpha: 1.0)
+            } else {
+                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+            }
+        }
+    }
+    
+    //Generates an audio file by concatenating all the
+    //audio filenames given in list provided
+    func createSound(soundFiles: [String], outputFile: String) {
+        var startTime: CMTime = kCMTimeZero
+        let composition: AVMutableComposition = AVMutableComposition()
+        let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
+        
+        for fileName in soundFiles {
+            let sound: String = Bundle.main.path(forResource: fileName, ofType: "mp3")!
+            let url: URL = URL(fileURLWithPath: sound)
+            let avAsset: AVURLAsset = AVURLAsset(url: url)
+            let timeRange: CMTimeRange = CMTimeRangeMake(kCMTimeZero, avAsset.duration)
+            let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
+            
+            try! compositionAudioTrack.insertTimeRange(timeRange, of: audioTrack, at: startTime)
+            startTime = CMTimeAdd(startTime, timeRange.duration)
+        }
+        
+        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
+        
+        let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
+        
+        export.outputURL = URL(fileURLWithPath: exportPath)
+        export.outputFileType = AVFileType.m4a
+        
+        export.exportAsynchronously {
+            if export.status == AVAssetExportSessionStatus.completed {
+                NSLog("All done");
+            }
+        }
+        
     }
 }
