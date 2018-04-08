@@ -25,6 +25,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var pianoView: UIView!
     @IBOutlet weak var connectionItem: UIBarButtonItem!
     @IBOutlet weak var libraryButton: UIBarButtonItem!
+    @IBOutlet weak var recordingLabel: UIBarButtonItem!
     
     @IBOutlet weak var key1: UIView!
     @IBOutlet weak var key2: UIView!
@@ -41,6 +42,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key13: UIView!
     @IBOutlet weak var key14: UIView!
     
+    var isRecording:Bool = true
+    var isConnected:Bool = false
+    
     //2D arrays for holding EMG data, and their corresponding "fill" flags
     var arr1: [Float] = [], arr2: [Float] = []
     var means: [Float] = []
@@ -55,6 +59,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var map: [Int:String]!
     var pressedKey:UIView!
     var sounds: [String:AVAudioPlayer]!
+    var track : [String]!
     
     //Used to keep track of horizontal motion through acceleration data
     var activeStart:Int!, pressed:Int! = -1
@@ -153,6 +158,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         activeStart = 5
         updateKeys()
         updatePressedKey(7)
+        
+        Model.loadGraph()
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,10 +177,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             self.connectToolbar.isHidden = !self.connectToolbar.isHidden
             self.libToolbar.isHidden = !self.libToolbar.isHidden
         })
-        
-        //Test play sound
-        let player: AVAudioPlayer = sounds["B3"]!
-        player.play()
     }
     
     // MARK: NSNotificationCenter Methods
@@ -184,6 +187,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         print("Connected to %@.", myo.name);
         
         connectionItem.title = "Connected"
+        isConnected = true
         
         myo.setStreamEmg(TLMStreamEmgType.enabled)
     }
@@ -193,6 +197,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         let userinfo = notification.userInfo
         let myo:TLMMyo = (userinfo![kTLMKeyMyo] as? TLMMyo)!
         print("Disconnected from %@.", myo.name);
+        
+        isConnected = false
         
         connectionItem.title = "Disconnected"
     }
@@ -208,7 +214,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         if(resultIndex >= 0) {
             let keyIndex: Int = activeStart + Int(resultIndex)
             sounds[map[keyIndex]!]?.play()
-            
+            if(isRecording) {
+                track.append(map[keyIndex]!)
+            }
             updatePressedKey(keyIndex)
         } else {
             //Update the key, but we do not want a sound to be played
@@ -262,6 +270,20 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
     }
     
+    @IBAction func toggleRecord() {
+        if(isRecording) {
+            stopRecording()
+            if(isConnected) {
+                createSound(soundFiles: track, outputFile: "test")
+                track = []
+            }
+            isRecording = false
+        } else {
+            startRecording()
+            isRecording = true
+        }
+    }
+    
     func changeActiveKey(activeStart: Int) {
         self.activeStart = activeStart
     }
@@ -276,12 +298,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     func getVelocity(accel:Double, timeElapsed:Double) -> Double {
         return lastVelocity + (accel * timeElapsed)
     }
-    
-//    //Try testing the model
-//    func testModel() {
-//        var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
-//        Model.predict(UnsafeMutablePointer<Float>(&arr))
-//    }
     
     //Update the color of the key actually being pressed (the one predicted
     //by the model)
@@ -339,6 +355,15 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
                 NSLog("All done creating audio file!!!");
             }
         }
-        
+    }
+    
+    func startRecording() {
+        recordingLabel.image = UIImage(named: "stop")
+        isRecording = true
+    }
+    
+    func stopRecording() {
+        recordingLabel.image = UIImage(named: "recording")
+        isRecording = false
     }
 }

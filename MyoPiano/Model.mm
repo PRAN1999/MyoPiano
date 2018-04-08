@@ -21,13 +21,9 @@ tensorflow::Session *session;
 
 + (void)loadGraph {
 
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
-//
-//    if ([self loadGraphFromPath:path] && [self createSession]) {
-//        [self predict:maleExample];
-//        [self predict:femaleExample];
-//        session->Close();
-//    }
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
+
+    [self loadGraphFromPath:path];
 }
 
 + (BOOL)loadGraphFromPath:(NSString *)path
@@ -40,10 +36,8 @@ tensorflow::Session *session;
 
     // This prints out the names of the nodes in the graph.
     auto nodeCount = (graph).node_size();
-    NSLog(@"Node count: %d", nodeCount);
     for (auto i = 0; i < nodeCount; ++i) {
         auto node = (graph).node(i);
-        NSLog(@"Node %d: %s '%s'", i, node.op().c_str(), node.name().c_str());
     }
 
     return YES;
@@ -70,9 +64,9 @@ tensorflow::Session *session;
 + (int)predict:(float *)example
 {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
     
-    if ([self loadGraphFromPath:path] && [self createSession]) {
+    if ([self createSession]) {
         // Define the tensor for the input data. This tensor takes one example
         // at a time, and the example has 20 features.
         tensorflow::Tensor x(tensorflow::DT_FLOAT, tensorflow::TensorShape({ 100, 8 }));

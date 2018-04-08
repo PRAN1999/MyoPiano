@@ -104,7 +104,7 @@
                                             <constraint firstAttribute="height" constant="199" id="xYZ-Vf-Ko9"/>
                                         </constraints>
                                     </imageView>
-                                    <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itg-v1-2Jf">
+                                    <toolbar hidden="YES" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itg-v1-2Jf">
                                         <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items>
@@ -122,12 +122,29 @@
                                             <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Oy9-J5-FZK"/>
                                             <barButtonItem title="Disconnected" width="42" style="plain" id="Z4T-ro-QZt"/>
                                         </items>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.0037674492389999999" green="0.0027653041669999999" blue="0.001716750038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </toolbar>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-IP-eKq">
+                                    <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-IP-eKq">
                                         <rect key="frame" x="0.0" y="343" width="667" height="32"/>
+                                        <color key="backgroundColor" red="0.0037674492385786351" green="0.0027653041672777226" blue="0.0017167500382990163" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
-                                            <barButtonItem title="Library" id="wnr-Pg-hKR"/>
+                                            <barButtonItem image="recording" width="42" style="plain" id="HCi-W9-v14">
+                                                <color key="tintColor" red="1" green="0.22361317684274662" blue="0.28391129184607777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="toggleRecord" destination="orW-Oj-wUQ" id="GlV-zh-Vez"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="42" style="plain" id="M6E-gu-nKA">
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="WdV-nD-Bg0"/>
+                                            <barButtonItem title="Library" id="wnr-Pg-hKR">
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </barButtonItem>
                                         </items>
+                                        <color key="tintColor" red="1" green="0.31748866660000002" blue="0.29949379599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.0037674492389999999" green="0.0027653041669999999" blue="0.001716750038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,6 +199,7 @@
                         <outlet property="libToolbar" destination="YUn-IP-eKq" id="d7K-jh-IW2"/>
                         <outlet property="libraryButton" destination="wnr-Pg-hKR" id="9sa-yt-Maw"/>
                         <outlet property="pianoView" destination="l2a-ee-z24" id="N5L-2g-sJs"/>
+                        <outlet property="recordingLabel" destination="HCi-W9-v14" id="PgX-40-H4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFa-hf-eWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,6 +209,7 @@
     </scenes>
     <resources>
         <image name="blackKeys" width="2194" height="392"/>
+        <image name="recording" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
     </resources>
 </document>
