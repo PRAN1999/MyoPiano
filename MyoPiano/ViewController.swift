@@ -192,6 +192,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //When acceleration data is recieved, update timestamp, velocity, and position
     @objc func didRecieveAccelData(_ notification: Notification) {
         //Handle acceleration data
         let userInfo = notification.userInfo
@@ -211,25 +212,47 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         self.activeStart = activeStart
     }
     
+    //Get the updated position using the equation: s_0 + v_0*t + 0.5*a*t^2
+    //where s_0 is the previous position
     func changePosition(velocity:Double, accel:Double, timeElapsed:Double) {
         lastPosition += (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
     }
     
+    //Get the updated velocity using the equation: v_0 + a*t
     func getVelocity(accel:Double, timeElapsed:Double) -> Double {
         return lastVelocity + (accel * timeElapsed)
     }
     
-    func updateActiveKey() {
-        
-    }
-    
-    func updateKeys() {
-        
-    }
-    
+    //Try testing the model
     func testModel() {
         var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
         Model.predict(UnsafeMutablePointer<Float>(&arr))
+    }
+    
+    //Update the color of the key actually being pressed (the one predicted
+    //by the model)
+    func updateActiveKey(_ activeIndex: Int) {
+        for i in activeStart...(activeStart+5) {
+            let key: UIView = keys[i]
+            if(i == activeIndex) {
+                key.backgroundColor = UIColor(red: 126, green: 183, blue: 128, alpha: 1.0)
+            } else {
+                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+            }
+        }
+    }
+    
+    //Update the color so that all the "active keys" (i.e. the ones that
+    //the player can play) are activated and everything else is deactivated
+    func updateKeys() {
+        for i in 0...13 {
+            let key: UIView = keys[i]
+            if(i < activeStart && i > activeStart + 5) {
+                key.backgroundColor = UIColor(red: 245, green: 219, blue: 203, alpha: 1.0)
+            } else {
+                key.backgroundColor = UIColor(red: 214, green: 213, blue: 179, alpha: 1.0)
+            }
+        }
     }
     
     //Generates an audio file by concatenating all the
