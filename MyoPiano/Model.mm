@@ -13,11 +13,9 @@
 #import "Model.h"
 
 
-@implementation Model {
-    tensorflow::GraphDef graph;
-    tensorflow::Session *session;
-}
-
+@implementation Model
+tensorflow::GraphDef graph;
+tensorflow::Session *session;
 
 + (void)loadGraph {
 
