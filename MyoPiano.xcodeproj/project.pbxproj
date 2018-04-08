@@ -36,6 +36,8 @@
 		5112BE6320796BE20014566B /* C3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5520796BE20014566B /* C3.mp3 */; };
 		5112BE6420796BE20014566B /* B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5620796BE20014566B /* B4.mp3 */; };
 		5112BE6520796BE20014566B /* E4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE5720796BE20014566B /* E4.mp3 */; };
+		51F40A4420798B0B00A53F66 /* tensorflow_experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */; };
+		51F40A4820798C0F00A53F66 /* Model.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51F40A4720798C0F00A53F66 /* Model.mm */; };
 		6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */; };
 		A481FF377EA6CD8AECA66FDF /* Pods_MyoPianoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +100,10 @@
 		5112BE5520796BE20014566B /* C3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C3.mp3; sourceTree = "<group>"; };
 		5112BE5620796BE20014566B /* B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B4.mp3; sourceTree = "<group>"; };
 		5112BE5720796BE20014566B /* E4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E4.mp3; sourceTree = "<group>"; };
+		518FC9C22079A73400BE4BB5 /* inference.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference.pb; sourceTree = "<group>"; };
+		51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tensorflow_experimental.framework; path = "Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework"; sourceTree = "<group>"; };
+		51F40A4720798C0F00A53F66 /* Model.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Model.mm; sourceTree = "<group>"; };
+		51F40A4920798E5100A53F66 /* Model.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		5D0A0F84D36D84A74F59CB1D /* Pods-MyoPianoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoTests/Pods-MyoPianoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE65B6AD9A413B4D8103D7E /* Pods-MyoPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPiano/Pods-MyoPiano.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPiano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F40A4420798B0B00A53F66 /* tensorflow_experimental.framework in Frameworks */,
 				5112BE4320793F9D0014566B /* Foundation.framework in Frameworks */,
 				5112BE4120793F960014566B /* UIKit.framework in Frameworks */,
 				5112BE3F20793F8B0014566B /* MyoKit.framework in Frameworks */,
@@ -174,6 +181,9 @@
 				5112BE3620793F600014566B /* MyoPiano-Bridging-Header.h */,
 				5112BE4420793FFF0014566B /* GLKitPolyfill.m */,
 				5112BE46207940120014566B /* GLKitPolyfill.h */,
+				51F40A4920798E5100A53F66 /* Model.h */,
+				51F40A4720798C0F00A53F66 /* Model.mm */,
+				518FC9C22079A73400BE4BB5 /* inference.pb */,
 			);
 			path = MyoPiano;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 		5112BE3920793F720014566B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */,
 				5112BE4220793F9D0014566B /* Foundation.framework */,
 				5112BE4020793F960014566B /* UIKit.framework */,
 				5112BE3E20793F8B0014566B /* MyoKit.framework */,
@@ -456,6 +467,7 @@
 				5112BE0E20793EF60014566B /* MyoPiano.xcdatamodeld in Sources */,
 				5112BE0820793EF60014566B /* ViewController.swift in Sources */,
 				5112BE0620793EF60014566B /* AppDelegate.swift in Sources */,
+				51F40A4820798C0F00A53F66 /* Model.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,9 +648,40 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/TensorFlow-experimental/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers'",
+					"'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers/third_party/eigen3'",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads",
+					"~/tensorflow",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads/eigen",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src",
+					"~/tensorflow/tensorflow/contrib/makefile/gen/proto",
 				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L",
+					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"protobuf_experimental\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"tensorflow_experimental\"",
+					"-force_load",
+					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental",
+					"/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
@@ -660,9 +703,40 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/TensorFlow-experimental/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers'",
+					"'${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/Headers/third_party/eigen3'",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads",
+					"~/tensorflow",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads/eigen",
+					"~/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src",
+					"~/tensorflow/tensorflow/contrib/makefile/gen/proto",
 				);
 				INFOPLIST_FILE = MyoPiano/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-L",
+					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"protobuf_experimental\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"tensorflow_experimental\"",
+					"-force_load",
+					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental",
+					"/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyoPiano/MyoPiano-Bridging-Header.h";
@@ -680,7 +754,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -698,7 +776,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -715,7 +797,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -732,7 +818,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QTN8GJXZ;
 				INFOPLIST_FILE = MyoPianoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPianoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

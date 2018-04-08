@@ -4,3 +4,4 @@
 
 #import <MyoKit/MyoKit.h>
 #import "GLKitPolyfill.h"
+#import "Model.h"
