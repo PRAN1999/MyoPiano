@@ -21,7 +21,7 @@ tensorflow::Session *session;
 
 + (void)loadGraph {
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference4" ofType:@"pb"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
 
     [self loadGraphFromPath:path];
 }
@@ -110,8 +110,6 @@ tensorflow::Session *session;
          */
         auto result = outputs[0].tensor<float, 2>();
         float max = result(0);
-        if(max > -3.5)
-            return 0;
         int maxIndex = 0;
         int i = 1;
         while(i < 6) {

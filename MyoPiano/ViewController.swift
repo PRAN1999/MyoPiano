@@ -132,10 +132,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         
         //Read from mean.txt and std.txt to create the normalization arrays
-        let meanPath = Bundle.main.path(forResource: "pop_mean", ofType: "txt")
+        let meanPath = Bundle.main.path(forResource: "pop_mean-2", ofType: "txt")
         let meanURL = URL(fileURLWithPath: meanPath!)
         
-        let stdPath = Bundle.main.path(forResource: "pop_std", ofType: "txt")
+        let stdPath = Bundle.main.path(forResource: "pop_std-2", ofType: "txt")
         let stdURL = URL(fileURLWithPath: stdPath!)
         
         do {
@@ -273,7 +273,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         print(chosenKeyIndex)
         if(chosenKeyIndex >= 0) {
-            var keyIndex: Int = activeStart + Int(chosenKeyIndex)
+            let keyIndex: Int = activeStart + Int(chosenKeyIndex)
             
             sounds[map[keyIndex]!]?.play()
             if(isRecording) {
