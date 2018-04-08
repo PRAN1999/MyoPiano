@@ -47,7 +47,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var sounds: [String:AVAudioPlayer]!
     
     //Used to keep track of horizontal motion through acceleration data
-    var activeStart:Int!, activeEnd:Int!
+    var activeStart:Int!, pressed:Int! = -1
     let g: Double = 9.80665 //gravitational constant of acceleration
     var acceleration: Double = 0.0
     var lastPosition: Double = 0.0
@@ -56,6 +56,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        testModel()
         let notifier = NotificationCenter.default
         
         // Data notifications are received through NSNotificationCenter.
@@ -117,7 +118,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         //Indicates which keys the user can press, activeStart pointing to the
         //thumb and activeEnd pointing to pinkie
-        activeStart = 5; activeEnd = 9;
+        activeStart = 5
         
         //Unnecesary since we only need to keep track of where the thumb is
 //        for i in activeStart...activeEnd {
@@ -206,7 +207,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
     }
     
-    func changeActiveKeys(activeStart: Int) {
+    func changeActiveKey(activeStart: Int) {
         self.activeStart = activeStart
     }
     
