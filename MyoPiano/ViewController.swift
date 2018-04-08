@@ -217,4 +217,37 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     func getVelocity(accel:Double, timeElapsed:Double) -> Double {
         return lastVelocity + (accel * timeElapsed)
     }
+    
+    //Generates an audio file by concatenating all the
+    //audio filenames given in list provided
+    func createSound(soundFiles: [String], outputFile: String) {
+        var startTime: CMTime = kCMTimeZero
+        let composition: AVMutableComposition = AVMutableComposition()
+        let compositionAudioTrack: AVMutableCompositionTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
+        
+        for fileName in soundFiles {
+            let sound: String = Bundle.main.path(forResource: fileName, ofType: "mp3")!
+            let url: URL = URL(fileURLWithPath: sound)
+            let avAsset: AVURLAsset = AVURLAsset(url: url)
+            let timeRange: CMTimeRange = CMTimeRangeMake(kCMTimeZero, avAsset.duration)
+            let audioTrack: AVAssetTrack = avAsset.tracks(withMediaType: AVMediaType.audio)[0]
+            
+            try! compositionAudioTrack.insertTimeRange(timeRange, of: audioTrack, at: startTime)
+            startTime = CMTimeAdd(startTime, timeRange.duration)
+        }
+        
+        let exportPath: String = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].path+"/"+outputFile+".m4a"
+        
+        let export: AVAssetExportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetAppleM4A)!
+        
+        export.outputURL = URL(fileURLWithPath: exportPath)
+        export.outputFileType = AVFileType.m4a
+        
+        export.exportAsynchronously {
+            if export.status == AVAssetExportSessionStatus.completed {
+                NSLog("All done");
+            }
+        }
+        
+    }
 }
