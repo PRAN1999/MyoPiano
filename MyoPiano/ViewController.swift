@@ -158,7 +158,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         activeStart = 5
         updateKeys()
-        updatePressedKey(7)
+        //updatePressedKey(7)
         
         Model.loadGraph()
     }
@@ -211,9 +211,69 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             arrayCopy[i] = (arrayCopy[i] - means[i]) / stds[i]
         }
         
-        var resultIndex = Model.predict(UnsafeMutablePointer<Float>(&arrayCopy)) - 1
+        let resultIndex = Model.predict(UnsafeMutablePointer<Float>(&arrayCopy)) - 1
         if(resultIndex >= 0) {
-            var keyIndex: Int = activeStart + Int(resultIndex)
+            let keyIndex: Int = activeStart + Int(resultIndex)
+            
+            sounds[map[keyIndex]!]?.play()
+            if(isRecording) {
+                print(keyIndex)
+                track.append(map[keyIndex]!)
+            }
+            updatePressedKey(keyIndex)
+        } else {
+            //Update the key, but we do not want a sound to be played
+            updatePressedKey(-1)
+            if(isRecording) {
+                track.append("rest")
+            }
+        }
+    }
+    
+    @objc func predictAndPlayThresh(_ inputArray: [Float]) {
+        //Send data to the TensorFlow model to be processed
+        var arrayCopy = inputArray
+//        for i in 0..<arrayCopy.count {
+////            arrayCopy[i] = (arrayCopy[i] - means[i]) / stds[i]
+//        }
+        
+        var chosenKeyIndex: Int = 0
+        var highHighResults: [Bool] = predictMyShit(arrayCopy, 20, 45)
+        var highResults: [Bool] = predictMyShit(arrayCopy, 20, 40)
+        var results: [Bool] = predictMyShit(arrayCopy, 20, 30)
+        var moderateResults: [Bool] = predictMyShit(arrayCopy, 15, 20)
+        
+        var foundKey: Bool = false
+        if(results[0]) {
+            //Index finger
+            if(highHighResults[3]) {
+                chosenKeyIndex = 1
+                foundKey = true
+            } else if (moderateResults[7]) {
+            //Middle
+                chosenKeyIndex = 2
+                foundKey = true
+            }
+            
+        }
+        if(!foundKey) {
+            //Pinkie
+            if(results[1]) {
+                chosenKeyIndex = 4
+            }
+            //Thumb
+            else if(highResults[2]) {
+                chosenKeyIndex = 0
+            }
+            //None
+            else {
+                chosenKeyIndex = -1
+            }
+        }
+        
+        print(chosenKeyIndex)
+        if(chosenKeyIndex >= 0) {
+            var keyIndex: Int = activeStart + Int(chosenKeyIndex)
             
             sounds[map[keyIndex]!]?.play()
             if(isRecording) {
@@ -247,17 +307,40 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         if(ct1 == 100) {
             //Send data to the TensorFlow model to be processed
-            predictAndPlay(arr1)
+            predictAndPlayThresh(arr1)
             //Reset array
             arr1 = []
             ct1 = 0
         } else if(ct2 == 100) {
             //Send data to the TensorFlow model to be processed
-            predictAndPlay(arr2)
+            predictAndPlayThresh(arr2)
             //Reset array
             arr2 = []
             ct2 = 0
         }
+    }
+    
+    //Gives crude predictions for which electrodes are activated
+    @objc func predictMyShit(_ emgData: [Float], _ thresh: Float, _ numThreshRequired: Int) -> [Bool] {
+        var retValues: [Bool] = []
+        for electrode in 0..<8 {
+            var numPastThresh: Int = 0
+            for point in stride(from: electrode, to: 800, by: 8) {
+                let data: Float = emgData[point]
+                if(data > thresh || data < -1*thresh) {
+                    numPastThresh += 1
+                }
+            }
+            
+//            print(numPastThresh)
+            if(numPastThresh > numThreshRequired) {
+                retValues.append(true)
+            } else {
+                retValues.append(false)
+            }
+        }
+        
+        return retValues
     }
     
     //When acceleration data is recieved, update timestamp, velocity, and position
@@ -269,7 +352,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             let data = userInfo![kTLMKeyGyroscopeEvent] as! TLMGyroscopeEvent
 
             let yGyro = data.vector.y
-            print(yGyro)
+//            print(yGyro)
+            
+            if(abs(data.vector.x) > 30 || abs(data.vector.z) > 30) {
+                return
+            }
+            
             let possibleStartActive = Float(lastPosition) + (yGyro+5) / 10
             activeStart = Int(possibleStartActive)
 
@@ -309,9 +397,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         for i in activeStart...(activeStart+4) {
             let key: UIView = keys[i]
             if(i == activeIndex) {
-                key.backgroundColor = UIColor(red: 126.0/255, green: 183.0/255, blue: 128.0/255, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 167.0/255, green: 187.0/255, blue: 236.0/255, alpha: 1.0)
             } else {
-                key.backgroundColor = UIColor(red: 214.0/255, green: 213.0/255, blue: 179.0/255, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 199.0/255, green: 211.0/255, blue: 242.0/255, alpha: 1.0)
             }
         }
     }
@@ -322,9 +410,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         for i in 0...13 {
             let key: UIView = keys[i]
             if(i < activeStart || i > activeStart + 4) {
-                key.backgroundColor = UIColor(red: 245.0/255, green: 219.0/255, blue: 203.0/255, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 231.0/255, green: 236.0/255, blue: 249.0/255, alpha: 1.0)
             } else {
-                key.backgroundColor = UIColor(red: 214.0/255, green: 213.0/255, blue: 179.0/255, alpha: 1.0)
+                key.backgroundColor = UIColor(red: 199.0/255, green: 211.0/255, blue: 242.0/255, alpha: 1.0)
             }
         }
     }
