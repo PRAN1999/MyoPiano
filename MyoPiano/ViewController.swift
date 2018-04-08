@@ -42,8 +42,9 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var key13: UIView!
     @IBOutlet weak var key14: UIView!
     
-    var isRecording:Bool = true
+    var isRecording:Bool = false
     var isConnected:Bool = false
+    var canMove = true
     
     //2D arrays for holding EMG data, and their corresponding "fill" flags
     var arr1: [Float] = [], arr2: [Float] = []
@@ -63,11 +64,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     //Used to keep track of horizontal motion through acceleration data
     var activeStart:Int!, pressed:Int! = -1
-    let g: Double = 9.80665 //gravitational constant of acceleration
-    var acceleration: Double = 0.0 //should be in m/(s^2)
-    var lastPosition: Double = 0.0 //presumably in meters
-    var lastVelocity: Double = 0.0 //should be in m/s
-    var lastTimestamp: Date = Date.init(timeIntervalSinceNow: 0)
+    var lastPosition: Double = 5.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +80,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         //Create an observer for recieving EMG data
         notifier.addObserver(self, selector: #selector(ViewController.didReceiveEMGChange(_:)), name: NSNotification.Name.TLMMyoDidReceiveEmgEvent, object: nil)
         
-        notifier.addObserver(self, selector: #selector(ViewController.didRecieveAccelData(_:)),
-            name: NSNotification.Name.TLMMyoDidReceiveAccelerometerEvent, object: nil)
+        notifier.addObserver(self, selector: #selector(ViewController.didRecieveGyroscopeData(_:)),
+            name: NSNotification.Name.TLMMyoDidReceiveGyroscopeEvent, object: nil)
+        
+        let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateGyro), userInfo: nil, repeats: true)
+        
+        timer.fire()
         
         //Create an gesture recognizer to hide and show the top and bottom toolbars
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tap(_:)))
@@ -131,10 +132,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         
         //Read from mean.txt and std.txt to create the normalization arrays
-        let meanPath = Bundle.main.path(forResource: "mean", ofType: "txt")
+        let meanPath = Bundle.main.path(forResource: "pop_mean", ofType: "txt")
         let meanURL = URL(fileURLWithPath: meanPath!)
         
-        let stdPath = Bundle.main.path(forResource: "std", ofType: "txt")
+        let stdPath = Bundle.main.path(forResource: "pop_std", ofType: "txt")
         let stdURL = URL(fileURLWithPath: stdPath!)
         
         do {
@@ -212,15 +213,20 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         var resultIndex = Model.predict(UnsafeMutablePointer<Float>(&arrayCopy)) - 1
         if(resultIndex >= 0) {
-            let keyIndex: Int = activeStart + Int(resultIndex)
+            var keyIndex: Int = activeStart + Int(resultIndex)
+            
             sounds[map[keyIndex]!]?.play()
             if(isRecording) {
+                print(keyIndex)
                 track.append(map[keyIndex]!)
             }
             updatePressedKey(keyIndex)
         } else {
             //Update the key, but we do not want a sound to be played
             updatePressedKey(-1)
+            if(isRecording) {
+                track.append("rest")
+            }
         }
     }
     
@@ -255,24 +261,28 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     //When acceleration data is recieved, update timestamp, velocity, and position
-    @objc func didRecieveAccelData(_ notification: Notification) {
-        //Handle acceleration data
-        let userInfo = notification.userInfo
-        let data = userInfo![kTLMKeyAccelerometerEvent] as! TLMAccelerometerEvent
+    @objc func didRecieveGyroscopeData(_ notification: Notification) {
         
-        let currTimestamp: Date = data.timestamp
-        let elapsedTime = currTimestamp.timeIntervalSince(lastTimestamp)
-        acceleration = Double(data.vector.y) * g
-        
-        lastVelocity = getVelocity(accel: acceleration, timeElapsed: elapsedTime)
-        lastTimestamp = currTimestamp
-        
-        let changeInCM = changePosition(velocity: lastVelocity, accel: acceleration, timeElapsed: elapsedTime)
-        lastPosition += changeInCM
-        
-        let possibleStartActive = Int(lastPosition / 2)
-        activeStart = possibleStartActive
-        updateKeys()
+        if(canMove) {
+            //Handle acceleration data
+            let userInfo = notification.userInfo
+            let data = userInfo![kTLMKeyGyroscopeEvent] as! TLMGyroscopeEvent
+
+            let yGyro = data.vector.y
+            print(yGyro)
+            let possibleStartActive = Float(lastPosition) + (yGyro+5) / 10
+            activeStart = Int(possibleStartActive)
+
+            activeStart = activeStart > 9 ? 9 : activeStart
+            activeStart = activeStart < 0 ? 0 : activeStart
+            lastPosition = Double(activeStart)
+            updateKeys()
+            canMove = false
+        }
+    }
+    
+    @objc func updateGyro() {
+        canMove = true
     }
     
     @IBAction func toggleRecord() {
@@ -291,19 +301,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     func changeActiveKey(activeStart: Int) {
         self.activeStart = activeStart
-    }
-    
-    //Get the updated position using the equation: s_0 + v_0*t + 0.5*a*t^2
-    //where s_0 is the previous position
-    func changePosition(velocity:Double, accel:Double, timeElapsed:Double) -> Double {
-        let changeInMeters = (lastVelocity * timeElapsed) + 0.5 * accel * (timeElapsed * timeElapsed)
-        //Add change in centimeters
-        return changeInMeters * 100
-    }
-    
-    //Get the updated velocity using the equation: v_0 + a*t
-    func getVelocity(accel:Double, timeElapsed:Double) -> Double {
-        return lastVelocity + (accel * timeElapsed)
     }
     
     //Update the color of the key actually being pressed (the one predicted

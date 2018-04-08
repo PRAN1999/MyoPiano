@@ -39,6 +39,12 @@
 		518FC9E62079D94600BE4BB5 /* A4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9E52079D94500BE4BB5 /* A4.mp3 */; };
 		518FC9E82079DA3400BE4BB5 /* std.txt in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9E72079DA3400BE4BB5 /* std.txt */; };
 		518FC9EA2079DA3A00BE4BB5 /* mean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9E92079DA3A00BE4BB5 /* mean.txt */; };
+		518FC9EC207A153F00BE4BB5 /* inference2.pb in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9EB207A152E00BE4BB5 /* inference2.pb */; };
+		518FC9EE207A157800BE4BB5 /* rest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9ED207A157800BE4BB5 /* rest.mp3 */; };
+		518FC9F0207A208300BE4BB5 /* inference3.pb in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9EF207A207800BE4BB5 /* inference3.pb */; };
+		518FC9F2207A444600BE4BB5 /* pop_mean.txt in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9F1207A444500BE4BB5 /* pop_mean.txt */; };
+		518FC9F4207A444E00BE4BB5 /* pop_std.txt in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9F3207A444E00BE4BB5 /* pop_std.txt */; };
+		518FC9F6207A44D400BE4BB5 /* inference4.pb in Resources */ = {isa = PBXBuildFile; fileRef = 518FC9F5207A44B900BE4BB5 /* inference4.pb */; };
 		51F40A4420798B0B00A53F66 /* tensorflow_experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */; };
 		51F40A4820798C0F00A53F66 /* Model.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51F40A4720798C0F00A53F66 /* Model.mm */; };
 		6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */; };
@@ -106,6 +112,12 @@
 		518FC9E52079D94500BE4BB5 /* A4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A4.mp3; sourceTree = "<group>"; };
 		518FC9E72079DA3400BE4BB5 /* std.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = std.txt; sourceTree = "<group>"; };
 		518FC9E92079DA3A00BE4BB5 /* mean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mean.txt; sourceTree = "<group>"; };
+		518FC9EB207A152E00BE4BB5 /* inference2.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference2.pb; sourceTree = "<group>"; };
+		518FC9ED207A157800BE4BB5 /* rest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = rest.mp3; path = MyoPiano/audio/rest.mp3; sourceTree = SOURCE_ROOT; };
+		518FC9EF207A207800BE4BB5 /* inference3.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference3.pb; sourceTree = "<group>"; };
+		518FC9F1207A444500BE4BB5 /* pop_mean.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pop_mean.txt; sourceTree = "<group>"; };
+		518FC9F3207A444E00BE4BB5 /* pop_std.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pop_std.txt; sourceTree = "<group>"; };
+		518FC9F5207A44B900BE4BB5 /* inference4.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = inference4.pb; sourceTree = "<group>"; };
 		51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tensorflow_experimental.framework; path = "Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework"; sourceTree = "<group>"; };
 		51F40A4720798C0F00A53F66 /* Model.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Model.mm; sourceTree = "<group>"; };
 		51F40A4920798E5100A53F66 /* Model.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
@@ -177,6 +189,8 @@
 			children = (
 				518FC9E72079DA3400BE4BB5 /* std.txt */,
 				518FC9E92079DA3A00BE4BB5 /* mean.txt */,
+				518FC9F1207A444500BE4BB5 /* pop_mean.txt */,
+				518FC9F3207A444E00BE4BB5 /* pop_std.txt */,
 				5112BE4920796BD10014566B /* audio */,
 				5112BE0520793EF60014566B /* AppDelegate.swift */,
 				5112BE0720793EF60014566B /* ViewController.swift */,
@@ -191,6 +205,9 @@
 				51F40A4920798E5100A53F66 /* Model.h */,
 				51F40A4720798C0F00A53F66 /* Model.mm */,
 				518FC9C92079CF4000BE4BB5 /* inference.pb */,
+				518FC9EB207A152E00BE4BB5 /* inference2.pb */,
+				518FC9EF207A207800BE4BB5 /* inference3.pb */,
+				518FC9F5207A44B900BE4BB5 /* inference4.pb */,
 			);
 			path = MyoPiano;
 			sourceTree = "<group>";
@@ -232,6 +249,7 @@
 		5112BE4920796BD10014566B /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				518FC9ED207A157800BE4BB5 /* rest.mp3 */,
 				518FC9E52079D94500BE4BB5 /* A4.mp3 */,
 				518FC9D52079D92D00BE4BB5 /* A3.mp3 */,
 				518FC9D02079D92800BE4BB5 /* B3.mp3 */,
@@ -372,6 +390,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518FC9F6207A44D400BE4BB5 /* inference4.pb in Resources */,
+				518FC9F0207A208300BE4BB5 /* inference3.pb in Resources */,
+				518FC9EE207A157800BE4BB5 /* rest.mp3 in Resources */,
+				518FC9EC207A153F00BE4BB5 /* inference2.pb in Resources */,
 				518FC9E22079D92F00BE4BB5 /* A3.mp3 in Resources */,
 				518FC9E42079D92F00BE4BB5 /* D3.mp3 in Resources */,
 				518FC9E02079D92F00BE4BB5 /* E3.mp3 in Resources */,
@@ -385,7 +407,9 @@
 				518FC9DD2079D92F00BE4BB5 /* B3.mp3 in Resources */,
 				518FC9E62079D94600BE4BB5 /* A4.mp3 in Resources */,
 				518FC9E32079D92F00BE4BB5 /* C3.mp3 in Resources */,
+				518FC9F4207A444E00BE4BB5 /* pop_std.txt in Resources */,
 				5112BE1320793EF80014566B /* LaunchScreen.storyboard in Resources */,
+				518FC9F2207A444600BE4BB5 /* pop_mean.txt in Resources */,
 				518FC9E82079DA3400BE4BB5 /* std.txt in Resources */,
 				518FC9DA2079D92F00BE4BB5 /* B4.mp3 in Resources */,
 				518FC9DE2079D92F00BE4BB5 /* E4.mp3 in Resources */,
@@ -688,8 +712,6 @@
 					"\"tensorflow_experimental\"",
 					"-force_load",
 					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental",
-					"/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
-					/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
@@ -743,8 +765,6 @@
 					"\"tensorflow_experimental\"",
 					"-force_load",
 					"${SRCROOT}/Pods/TensorFlow-experimental/Frameworks/tensorflow_experimental.framework/tensorflow_experimental",
-					"/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
-					/Users/pran1999/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PN.MyoPiano;
