@@ -12,11 +12,11 @@
 
 #import "Model.h"
 
-tensorflow::GraphDef graph;
-tensorflow::Session *session;
 
-
-@implementation Model
+@implementation Model {
+    tensorflow::GraphDef graph;
+    tensorflow::Session *session;
+}
 
 
 + (void)loadGraph {
@@ -24,6 +24,8 @@ tensorflow::Session *session;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"inference" ofType:@"pb"];
 
     [self loadGraphFromPath:path];
+    
+    free(&path);
 }
 
 + (BOOL)loadGraphFromPath:(NSString *)path
