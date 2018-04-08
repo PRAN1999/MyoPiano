@@ -162,6 +162,21 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         connectionItem.title = "Disconnected"
     }
     
+    @objc func predictAndPlay(_ inputArray: [Float]) {
+        //Send data to the TensorFlow model to be processed
+        var arrayCopy = inputArray
+        var resultIndex = Model.predict(UnsafeMutablePointer<Float>(&arrayCopy)) - 1
+        if(resultIndex >= 0) {
+            let keyIndex: Int = activeStart + Int(resultIndex)
+            sounds[map[keyIndex]!]?.play()
+            
+            updatePressedKey(keyIndex)
+        } else {
+            //Update the key, but we do not want a sound to be played
+            updatePressedKey(-1)
+        }
+    }
+    
     @objc func didReceiveEMGChange(_ notification:Notification) {
         var userInfo = notification.userInfo
         let data = userInfo![kTLMKeyEMGEvent] as! TLMEmgEvent
@@ -179,10 +194,18 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         if(ct1 == 100) {
             print(arr1)
+            //Send data to the TensorFlow model to be processed
+            predictAndPlay(arr1)
+            //Reset array
             arr1 = []
+            ct1 = 0
         } else if(ct2 == 100) {
             print(arr2)
+            //Send data to the TensorFlow model to be processed
+            predictAndPlay(arr2)
+            //Reset array
             arr2 = []
+            ct2 = 0
         }
     }
     
