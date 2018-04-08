@@ -9,6 +9,14 @@
 import UIKit
 import AVFoundation
 
+extension String {
+    var lines: [String] {
+        var result: [String] = []
+        enumerateLines { line, _ in result.append(line) }
+        return result
+    }
+}
+
 class ViewController : UIViewController, UIGestureRecognizerDelegate {
     var currentPose: TLMPose!
     //All outlets to keys and UI features
@@ -35,6 +43,8 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     //2D arrays for holding EMG data, and their corresponding "fill" flags
     var arr1: [Float] = [], arr2: [Float] = []
+    var means: [Float] = []
+    var stds: [Float] = []
     var ct1 = 0, ct2 = 0
     var arr2Fill: Bool = false
     
@@ -56,7 +66,6 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testModel()
         let notifier = NotificationCenter.default
         
         // Data notifications are received through NSNotificationCenter.
@@ -115,6 +124,32 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
             i += 1
         }
         
+        
+        //Read from mean.txt and std.txt to create the normalization arrays
+        let meanPath = Bundle.main.path(forResource: "mean", ofType: "txt")
+        let meanURL = URL(fileURLWithPath: meanPath!)
+        
+        let stdPath = Bundle.main.path(forResource: "std", ofType: "txt")
+        let stdURL = URL(fileURLWithPath: stdPath!)
+        
+        do {
+            let meanText = try String(contentsOf: meanURL, encoding: String.Encoding.utf8)
+            let stdText = try String(contentsOf: stdURL, encoding: String.Encoding.utf8)
+            
+            let meanStrings = meanText.lines
+            for string in meanStrings {
+                means.append(Float(string)!)
+            }
+            
+            let stdStrings = stdText.lines
+            for string in stdStrings {
+                stds.append(Float(string)!)
+            }
+        } catch let error as Error {
+            print(error.localizedDescription)
+        }
+        
+        
         activeStart = 5
         updateKeys()
         updatePressedKey(7)
@@ -165,6 +200,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     @objc func predictAndPlay(_ inputArray: [Float]) {
         //Send data to the TensorFlow model to be processed
         var arrayCopy = inputArray
+        for i in 0..<arrayCopy.count {
+            arrayCopy[i] = (arrayCopy[i] - means[i]) / stds[i]
+        }
+        
         var resultIndex = Model.predict(UnsafeMutablePointer<Float>(&arrayCopy)) - 1
         if(resultIndex >= 0) {
             let keyIndex: Int = activeStart + Int(resultIndex)
@@ -193,14 +232,12 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         ct2+=1
         
         if(ct1 == 100) {
-            print(arr1)
             //Send data to the TensorFlow model to be processed
             predictAndPlay(arr1)
             //Reset array
             arr1 = []
             ct1 = 0
         } else if(ct2 == 100) {
-            print(arr2)
             //Send data to the TensorFlow model to be processed
             predictAndPlay(arr2)
             //Reset array
@@ -240,11 +277,11 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         return lastVelocity + (accel * timeElapsed)
     }
     
-    //Try testing the model
-    func testModel() {
-        var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
-        Model.predict(UnsafeMutablePointer<Float>(&arr))
-    }
+//    //Try testing the model
+//    func testModel() {
+//        var arr: [Float] = Array(repeating: 0.0, count: 100 * 8)
+//        Model.predict(UnsafeMutablePointer<Float>(&arr))
+//    }
     
     //Update the color of the key actually being pressed (the one predicted
     //by the model)
@@ -299,7 +336,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
         
         export.exportAsynchronously {
             if export.status == AVAssetExportSessionStatus.completed {
-                NSLog("All done");
+                NSLog("All done creating audio file!!!");
             }
         }
         
