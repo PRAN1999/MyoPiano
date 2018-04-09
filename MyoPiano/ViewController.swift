@@ -238,10 +238,10 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
 //        }
         
         var chosenKeyIndex: Int = 0
-        var highHighResults: [Bool] = predictMyShit(arrayCopy, 20, 45)
-        var highResults: [Bool] = predictMyShit(arrayCopy, 20, 40)
-        var results: [Bool] = predictMyShit(arrayCopy, 20, 30)
-        var moderateResults: [Bool] = predictMyShit(arrayCopy, 15, 20)
+        var highHighResults: [Bool] = predictCrude(arrayCopy, 20, 45)
+        var highResults: [Bool] = predictCrude(arrayCopy, 20, 40)
+        var results: [Bool] = predictCrude(arrayCopy, 20, 30)
+        var moderateResults: [Bool] = predictCrude(arrayCopy, 15, 20)
         
         var foundKey: Bool = false
         if(results[0]) {
@@ -321,7 +321,7 @@ class ViewController : UIViewController, UIGestureRecognizerDelegate {
     }
     
     //Gives crude predictions for which electrodes are activated
-    @objc func predictMyShit(_ emgData: [Float], _ thresh: Float, _ numThreshRequired: Int) -> [Bool] {
+    @objc func predictCrude(_ emgData: [Float], _ thresh: Float, _ numThreshRequired: Int) -> [Bool] {
         var retValues: [Bool] = []
         for electrode in 0..<8 {
             var numPastThresh: Int = 0

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06DF7BE9CC87A9A170CA681B /* Pods_MyoPianoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */; };
 		5112BE0620793EF60014566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0520793EF60014566B /* AppDelegate.swift */; };
 		5112BE0820793EF60014566B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5112BE0720793EF60014566B /* ViewController.swift */; };
 		5112BE0B20793EF60014566B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5112BE0920793EF60014566B /* Main.storyboard */; };
@@ -46,7 +45,6 @@
 		51F40A4420798B0B00A53F66 /* tensorflow_experimental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F40A4320798B0B00A53F66 /* tensorflow_experimental.framework */; };
 		51F40A4820798C0F00A53F66 /* Model.mm in Sources */ = {isa = PBXBuildFile; fileRef = 51F40A4720798C0F00A53F66 /* Model.mm */; };
 		6698EEE1A97332CE8E3AE3FB /* Pods_MyoPiano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */; };
-		A481FF377EA6CD8AECA66FDF /* Pods_MyoPianoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		05FBDC85605F8513A8FFA477 /* Pods-MyoPianoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoUITests/Pods-MyoPianoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPianoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE6612475FE1CAA75D360FB /* Pods-MyoPianoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoUITests/Pods-MyoPianoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4DFB0C8CB650BBC3B6B56E59 /* Pods-MyoPianoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoTests/Pods-MyoPianoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5112BE0220793EF60014566B /* MyoPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyoPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +117,6 @@
 		5D0A0F84D36D84A74F59CB1D /* Pods-MyoPianoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPianoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPianoTests/Pods-MyoPianoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE65B6AD9A413B4D8103D7E /* Pods-MyoPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPiano/Pods-MyoPiano.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPiano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyoPianoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0C905E6E8B119B5ECD4E45 /* Pods-MyoPiano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyoPiano.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyoPiano/Pods-MyoPiano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06DF7BE9CC87A9A170CA681B /* Pods_MyoPianoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +146,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A481FF377EA6CD8AECA66FDF /* Pods_MyoPianoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +228,6 @@
 				5112BE3C20793F820014566B /* SystemConfiguration.framework */,
 				5112BE3A20793F730014566B /* CoreBluetooth.framework */,
 				7CA5E5F9495409E03CF4B59E /* Pods_MyoPiano.framework */,
-				1634600AC7AB7F9416681DAB /* Pods_MyoPianoTests.framework */,
-				8361ABFD37AC5347A3DA75A7 /* Pods_MyoPianoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
